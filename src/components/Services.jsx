@@ -32,7 +32,7 @@ const services = [
     {
         icon: 'fas fa-truck-medical',
         title: 'Emergency Care',
-        description: '24/7 emergency dental care when your child needs it',
+        description: 'Emergency dental care when your child needs it',
         color: 'orange',
     },
 ];

@@ -32,7 +32,7 @@ const reasons = [
         bg: '#FFE0EC',
         iconColor: '#FF6B9D',
         title: 'Emergency Support',
-        description: 'Available 24/7 for dental emergencies. Quick response when your child needs immediate care.',
+        description: 'Available for dental emergencies. Quick response when your child needs immediate care.',
     },
 ];
 

@@ -4,7 +4,7 @@ export default function Hero({ onBookClick }) {
             <div className="container hero-content">
                 <div className="hero-badge">
                     <i className="fas fa-award" style={{ color: '#FFD93D' }}></i>
-                    #1 Pediatric Dental Clinic in Town
+                    #1 Pediatric Dental Clinic in Erode
                 </div>
 
                 <div className="hero-mascot">
@@ -17,27 +17,27 @@ export default function Hero({ onBookClick }) {
                 </h1>
 
                 <p className="hero-subtitle">
-                    Gentle, fun & pain-free dental care designed specially for your little ones.
+                    Gentle, fun & pain-free dental care designed specially for infants, children, and teens.
                     Because every child deserves a sparkling smile!
                 </p>
 
                 <div className="hero-buttons">
-                    <button className="btn btn-primary btn-large" onClick={onBookClick}>
-                        <i className="fas fa-calendar-check"></i> Book Appointment
-                    </button>
                     <a href="tel:+919043060968" className="btn btn-call btn-large">
                         <i className="fas fa-phone"></i> Call Now
+                    </a>
+                    <a href="https://wa.me/919043060968" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp btn-large">
+                        <i className="fab fa-whatsapp"></i> WhatsApp Us
                     </a>
                 </div>
 
                 <div className="hero-stats">
                     <div className="hero-stat">
-                        <div className="hero-stat-number">5000+</div>
-                        <div className="hero-stat-label">Happy Kids</div>
+                        <div className="hero-stat-number">3800+</div>
+                        <div className="hero-stat-label">Kids Treated</div>
                     </div>
                     <div className="hero-stat">
-                        <div className="hero-stat-number">10+</div>
-                        <div className="hero-stat-label">Years Exp.</div>
+                        <div className="hero-stat-number">7+</div>
+                        <div className="hero-stat-label">Years of Experience</div>
                     </div>
                     <div className="hero-stat">
                         <div className="hero-stat-number"><i className="fas fa-star" style={{ color: '#FFD93D', fontSize: '0.8em' }}></i> 4.9</div>

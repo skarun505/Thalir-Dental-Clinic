@@ -32,7 +32,7 @@ export default function ExitPopup({ onBookClick }) {
                 <span className="emoji"><i className="fas fa-face-sad-tear" style={{ color: '#6C63FF' }}></i></span>
                 <h3>Wait! Don't Leave Yet!</h3>
                 <p>
-                    Book your child's <strong>FREE first dental check-up</strong> today
+                    Book your child's <strong>next dental check-up</strong> today
                     and get a special surprise gift! <i className="fas fa-gift" style={{ color: '#FF6B9D' }}></i>
                 </p>
                 <button
@@ -43,7 +43,7 @@ export default function ExitPopup({ onBookClick }) {
                     }}
                     style={{ width: '100%' }}
                 >
-                    <i className="fas fa-calendar-check"></i> Claim Free Check-up
+                    <i className="fas fa-calendar-check"></i> Claim Surprise Gift
                 </button>
                 <button
                     onClick={handleClose}
