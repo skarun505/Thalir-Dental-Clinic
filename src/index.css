@@ -1629,6 +1629,75 @@ select.form-input {
   opacity: 0.5;
 }
 
+/* Subix Credit */
+.footer-crafted {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: var(--space-md);
+}
+
+.footer-crafted-text {
+  font-size: 0.78rem;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-crafted-text i {
+  color: var(--accent-blue);
+  opacity: 1;
+}
+
+.footer-subix-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.25) 0%, rgba(255, 107, 157, 0.15) 100%);
+  border: 1px solid rgba(108, 99, 255, 0.4);
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-subix-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.footer-subix-badge:hover {
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.5) 0%, rgba(255, 107, 157, 0.4) 100%);
+  border-color: rgba(108, 99, 255, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.4);
+}
+
+.footer-subix-badge:hover::before {
+  opacity: 1;
+  animation: shimmer 1.2s infinite;
+}
+
+.footer-subix-badge i:first-child {
+  color: #FFD93D;
+  font-size: 0.78rem;
+  animation: wiggle 3s ease-in-out infinite;
+}
+
 /* ===== Smile of the Month ===== */
 .smile-section {
   text-align: center;

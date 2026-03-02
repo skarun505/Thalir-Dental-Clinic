@@ -35,6 +35,25 @@ export default function Footer() {
             <p className="footer-copyright">
                 &copy; 2026 Thalir Dental Clinic. All rights reserved. Made with <i className="fas fa-heart" style={{ color: '#FF6B9D' }}></i> for little smiles.
             </p>
+
+            <div className="footer-divider" style={{ marginTop: '12px' }}></div>
+
+            <div className="footer-crafted">
+                <span className="footer-crafted-text">
+                    <i className="fas fa-code"></i> Crafted &amp; Maintained with passion by
+                </span>
+                <a
+                    href="https://subix.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-subix-badge"
+                    aria-label="Visit Subix"
+                >
+                    <i className="fas fa-rocket"></i>
+                    <span>Subix</span>
+                    <i className="fas fa-arrow-up-right-from-square" style={{ fontSize: '0.65rem' }}></i>
+                </a>
+            </div>
         </footer>
     );
 }
