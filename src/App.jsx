@@ -7,6 +7,7 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Doctor from './components/Doctor';
 import Gallery from './components/Gallery';
 import DentalTips from './components/DentalTips';
+import NoCavityClub from './components/NoCavityClub';
 import Testimonials from './components/Testimonials';
 import SmileOfMonth from './components/SmileOfMonth';
 import LimitedBanner from './components/LimitedBanner';
@@ -53,6 +54,7 @@ function App() {
         <WhyChooseUs />
         <Doctor />
         <Gallery />
+        <NoCavityClub />
         <DentalTips />
         <SmileOfMonth />
         <Testimonials />

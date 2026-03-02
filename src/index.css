@@ -1745,4 +1745,305 @@ select.form-input {
   .footer {
     padding-bottom: var(--space-2xl);
   }
+
+  .ncc-info-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ncc-benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ncc-carousel-wrapper {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ===== No Cavity Club Section ===== */
+.ncc-section {
+  background: linear-gradient(135deg, #FFF9E0 0%, #E8F5E9 50%, #E0F4FF 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ncc-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 250px;
+  height: 250px;
+  border-radius: var(--radius-full);
+  background: rgba(108, 99, 255, 0.04);
+  animation: float 8s ease-in-out infinite;
+}
+
+.ncc-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.ncc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: linear-gradient(135deg, #6BCB77 0%, #4CAF50 100%);
+  color: var(--white);
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-md);
+  box-shadow: 0 4px 12px rgba(107, 203, 119, 0.3);
+}
+
+.ncc-badge i {
+  font-size: 0.85rem;
+}
+
+/* Carousel */
+.ncc-carousel-wrapper {
+  margin-bottom: var(--space-xl);
+  position: relative;
+}
+
+.ncc-carousel {
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.ncc-slide {
+  min-width: 100%;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+
+.ncc-slide img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.ncc-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.ncc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  padding: 0;
+}
+
+.ncc-dot.active {
+  background: var(--primary);
+  width: 28px;
+  border-radius: var(--radius-pill);
+}
+
+/* Info Cards */
+.ncc-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.ncc-info-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all var(--transition-normal);
+}
+
+.ncc-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ncc-info-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: var(--space-md);
+}
+
+.ncc-info-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.ncc-info-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Steps */
+.ncc-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.ncc-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.ncc-step-number {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.ncc-step strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.ncc-step p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Benefits */
+.ncc-benefits {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  margin-bottom: var(--space-xl);
+}
+
+.ncc-benefits h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.ncc-benefits h3 i {
+  color: var(--accent-pink);
+  margin-right: 6px;
+}
+
+.ncc-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.ncc-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 14px;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ncc-benefit-item:hover {
+  background: var(--pastel-green);
+  transform: translateX(4px);
+}
+
+.ncc-benefit-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #6BCB77 0%, #4CAF50 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 0.85rem;
+}
+
+/* CTA */
+.ncc-cta {
+  text-align: center;
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-pink) 100%);
+  border-radius: var(--radius-xl);
+  color: var(--white);
+}
+
+.ncc-cta p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.ncc-cta .btn-primary {
+  background: var(--white);
+  color: var(--primary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ncc-cta .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .ncc-slide img {
+    height: 350px;
+  }
+
+  .ncc-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .ncc-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ncc-slide img {
+    height: 400px;
+  }
 }
