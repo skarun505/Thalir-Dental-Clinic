@@ -1,11 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 
 const clubPhotos = [
-    { src: '/images/cavity-club-1.png', alt: 'Proud No Cavity Club member with certificate' },
-    { src: '/images/cavity-club-2.png', alt: 'Happy girl showing her No Cavity Club certificate' },
-    { src: '/images/cavity-club-3.png', alt: 'Boy with thumbs up holding his certificate' },
-    { src: '/images/cavity-club-4.png', alt: 'Kids celebrating their No Cavity Club membership' },
+    { src: '/images/IMG_3128.JPG', alt: 'No Cavity Club member with certificate' },
+    { src: '/images/IMG_5653.jpg', alt: 'Happy No Cavity Club member' },
+    { src: '/images/IMG_5676.jpeg', alt: 'Proud No Cavity Club member' },
+    { src: '/images/IMG_5817.jpeg', alt: 'No Cavity Club member celebrating' },
+    { src: '/images/IMG_5884.jpeg', alt: 'Smiling No Cavity Club member' },
+    { src: '/images/IMG_5935.jpeg', alt: 'No Cavity Club member with thumbs up' },
+    { src: '/images/IMG_6180.jpeg', alt: 'No Cavity Club member showing certificate' },
+    { src: '/images/IMG_6247.jpeg', alt: 'No Cavity Club member happy visit' },
+    { src: '/images/IMG_6248.jpeg', alt: 'No Cavity Club member proud smile' },
+    { src: '/images/IMG_6410.jpeg', alt: 'No Cavity Club member holding badge' },
 ];
+
 
 const benefits = [
     { icon: 'fas fa-certificate', text: 'Official membership certificate' },

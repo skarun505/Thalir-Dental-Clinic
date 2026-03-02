@@ -14,7 +14,10 @@ export default function Contact() {
                                 <div className="contact-icon"><i className="fas fa-map-marker-alt" style={{ color: '#FF6B9D' }}></i></div>
                                 <div>
                                     <h4>Our Location</h4>
-                                    <p>D/1, Brough Rd, Erode Fort, Erode, Tamil Nadu 638001</p>
+                                    <p>424, Dr. Amsa Subramaniyam Hospital Complex, Brough Road, Erode – 638001</p>
+                                    <p style={{ fontSize: '0.78rem', marginTop: '4px', color: '#BA68C8', fontWeight: 700 }}>
+                                        📍 Next to Saveetha Hospital Signal
+                                    </p>
                                 </div>
                             </div>
 
@@ -42,11 +45,11 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            <a href="mailto:hello@thalirdental.com" className="contact-info-card">
+                            <a href="mailto:thalirkidsdental@gmail.com" className="contact-info-card">
                                 <div className="contact-icon"><i className="fas fa-envelope" style={{ color: '#BA68C8' }}></i></div>
                                 <div>
                                     <h4>Email</h4>
-                                    <p>hello@thalirdental.com</p>
+                                    <p>thalirkidsdental@gmail.com</p>
                                 </div>
                             </a>
                         </div>

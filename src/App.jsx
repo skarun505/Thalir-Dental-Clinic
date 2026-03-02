@@ -11,6 +11,7 @@ import NoCavityClub from './components/NoCavityClub';
 import Testimonials from './components/Testimonials';
 import SmileOfMonth from './components/SmileOfMonth';
 import LimitedBanner from './components/LimitedBanner';
+import Specialties from './components/Specialties';
 import Contact from './components/Contact';
 import BookingForm from './components/BookingForm';
 import StickyBar from './components/StickyBar';
@@ -51,6 +52,7 @@ function App() {
         <FreeBanner onBookClick={openBooking} />
         <Services />
         <LimitedBanner onBookClick={openBooking} />
+        <Specialties />
         <WhyChooseUs />
         <Doctor />
         <Gallery />
