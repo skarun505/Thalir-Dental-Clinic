@@ -3,12 +3,12 @@ export default function Hero({ onBookClick }) {
         <section className="hero" id="hero">
             <div className="container hero-content">
                 <div className="hero-badge">
-                    <i className="fas fa-award" style={{ color: '#FFD93D' }}></i>
-                    #1 Pediatric Dental Clinic in Erode
+                    <img src="/images/thalir-logo.jpg" alt="Thalir Logo" className="hero-badge-logo" />
+                    <span>#1 Pediatric Dental Clinic in Erode</span>
                 </div>
 
                 <div className="hero-mascot">
-                    <img src="/images/tooth-mascot.png" alt="Thalir Dental Mascot" />
+                    <img src="/images/thalir-logo.jpg" alt="Thalir Dental Logo" />
                 </div>
 
                 <h1>
