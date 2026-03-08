@@ -10,7 +10,6 @@ import DentalTips from './components/DentalTips';
 import NoCavityClub from './components/NoCavityClub';
 import Testimonials from './components/Testimonials';
 import SmileOfMonth from './components/SmileOfMonth';
-import LimitedBanner from './components/LimitedBanner';
 import Specialties from './components/Specialties';
 import Contact from './components/Contact';
 import BookingForm from './components/BookingForm';
@@ -51,12 +50,11 @@ function App() {
         <Hero onBookClick={openBooking} />
         <FreeBanner onBookClick={openBooking} />
         <Services />
-        <LimitedBanner onBookClick={openBooking} />
         <Specialties />
+        <NoCavityClub />
         <WhyChooseUs />
         <Doctor />
         <Gallery />
-        <NoCavityClub />
         <DentalTips />
         <SmileOfMonth />
         <Testimonials />

@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <footer className="footer">
             <div className="footer-logo">
-                Thalir <span>Dental</span> <i className="fas fa-tooth"></i>
+                <img src="/images/thalir-logo.png" alt="Thalir Dental Logo" />
             </div>
             <p className="footer-text">
                 Making dental care fun, gentle, and memorable for every child.
@@ -18,7 +18,7 @@ export default function Footer() {
                 <a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services'); }}>Services</a>
                 <a href="#why-us" onClick={(e) => { e.preventDefault(); scrollTo('why-us'); }}>Why Us</a>
                 <a href="#doctor" onClick={(e) => { e.preventDefault(); scrollTo('doctor'); }}>Doctor</a>
-                <a href="#gallery" onClick={(e) => { e.preventDefault(); scrollTo('gallery'); }}>Gallery</a>
+                <a href="#gallery" onClick={(e) => { e.preventDefault(); scrollTo('gallery'); }}>Clinic Tour</a>
                 <a href="#testimonials" onClick={(e) => { e.preventDefault(); scrollTo('testimonials'); }}>Reviews</a>
                 <a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>Contact</a>
             </div>
@@ -36,24 +36,7 @@ export default function Footer() {
                 &copy; 2026 Thalir Dental Clinic. All rights reserved. Made with <i className="fas fa-heart" style={{ color: '#FF6B9D' }}></i> for little smiles.
             </p>
 
-            <div className="footer-divider" style={{ marginTop: '12px' }}></div>
 
-            <div className="footer-crafted">
-                <span className="footer-crafted-text">
-                    <i className="fas fa-code"></i> Crafted &amp; Maintained with passion by
-                </span>
-                <a
-                    href="https://subix.in/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="footer-subix-badge"
-                    aria-label="Visit Subix"
-                >
-                    <i className="fas fa-rocket"></i>
-                    <span>Subix</span>
-                    <i className="fas fa-arrow-up-right-from-square" style={{ fontSize: '0.65rem' }}></i>
-                </a>
-            </div>
         </footer>
     );
 }

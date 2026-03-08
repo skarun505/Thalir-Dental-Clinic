@@ -19,8 +19,6 @@ const benefits = [
     { icon: 'fas fa-gift', text: 'Surprise gift bag on every visit' },
     { icon: 'fas fa-star', text: 'Gold star badge to wear proudly' },
     { icon: 'fas fa-camera', text: 'Photo on our Wall of Fame' },
-    { icon: 'fas fa-crown', text: 'VIP priority booking' },
-    { icon: 'fas fa-medal', text: 'Annual Super Smile Award' },
 ];
 
 export default function NoCavityClub() {
@@ -132,7 +130,7 @@ export default function NoCavityClub() {
                                 <div className="ncc-step-number" style={{ background: '#6BCB77' }}>3</div>
                                 <div>
                                     <strong>Zero Cavities = Member!</strong>
-                                    <p>No cavities found? Congratulations — welcome to the club!</p>
+                                    <p>No cavities found? Congratulations, welcome to the club!</p>
                                 </div>
                             </div>
                         </div>

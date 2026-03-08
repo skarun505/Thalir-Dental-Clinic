@@ -25,7 +25,7 @@ const reasons = [
         bg: '#F3E5F5',
         iconColor: '#BA68C8',
         title: 'Reward System',
-        description: 'Kids earn stickers, toys, and certificates for being brave — making dentist visits exciting!',
+        description: 'Kids earn stickers, toys, and certificates for being brave, making dentist visits exciting!',
     },
     {
         icon: 'fas fa-ambulance',

@@ -4,7 +4,7 @@ const specialties = [
         emoji: '✂️',
         title: 'Tongue & Lip Tie Specialty',
         tagline: 'Restoring the Joy of Breastfeeding',
-        description: 'Precision laser care for tongue and lip ties — a gentle, fast procedure that makes a world of difference for newborns and breastfeeding moms.',
+        description: 'Precision laser care for tongue and lip ties, restoring the joy of breastfeeding.',
         highlight: 'Laser Precision',
         color: '#FF6B9D',
         bg: '#FFE0EC',
@@ -13,9 +13,9 @@ const specialties = [
     {
         icon: 'fas fa-hand-holding-heart',
         emoji: '💜',
-        title: 'Special Healthcare Needs Dentistry',
+        title: 'Special Needs Dentistry',
         tagline: 'Care at Your Child\'s Pace',
-        description: "Sensory-friendly dental care tailored to your child's unique rhythm and needs — because every child deserves compassionate, judgment-free care.",
+        description: "Sensory-friendly dental care tailored to your child's own rhythm and unique needs.",
         highlight: 'Sensory Friendly',
         color: '#6C63FF',
         bg: '#EDE9FF',
@@ -26,7 +26,7 @@ const specialties = [
         emoji: '🛡️',
         title: 'Preventive Oral Care',
         tagline: 'Strong Teeth from Day One',
-        description: "Proactive protection and parental education to keep your child's teeth strong from their very first visit — building lifelong healthy habits.",
+        description: "Proactive care to keep your child's teeth healthy and strong from the very first.",
         highlight: 'Starting from Birth',
         color: '#6BCB77',
         bg: '#E8F5E9',
@@ -37,7 +37,7 @@ const specialties = [
         emoji: '🌬️',
         title: 'Airway Dentistry',
         tagline: 'Breathe, Sleep & Grow Fully',
-        description: 'We look beyond the teeth to ensure your child breathes freely, sleeps soundly, and grows to their fullest potential — addressing the root cause.',
+        description: 'We look beyond teeth to help your child breathe, sleep, and grow with confidence.',
         highlight: 'Beyond the Teeth',
         color: '#4FC3F7',
         bg: '#E0F4FF',
@@ -46,9 +46,9 @@ const specialties = [
     {
         icon: 'fas fa-teeth',
         emoji: '😁',
-        title: 'Early Orthodontic Treatment',
+        title: 'Early Orthodontic Care',
         tagline: 'Shaping Confident Smiles Early',
-        description: 'Early intervention and correction of oral habits creates the space for healthy adult teeth and a balanced, confident profile — the right start matters.',
+        description: 'Early habit correction creates the space for healthy adult teeth and great smiles.',
         highlight: 'Early Intervention',
         color: '#BA68C8',
         bg: '#F3E5F5',
@@ -59,7 +59,7 @@ const specialties = [
         emoji: '😊',
         title: 'Pain Free Dentistry',
         tagline: 'Smiles Without the Stress',
-        description: 'Our safe sedation options ensure your child gets a healthy smile with zero anxiety — making every visit something they can actually look forward to.',
+        description: 'Safe sedation ensures your child gets a healthy smile with absolutely no anxiety.',
         highlight: 'Zero Anxiety',
         color: '#FFD93D',
         bg: '#FFF9E0',
@@ -70,7 +70,7 @@ const specialties = [
         emoji: '🤰',
         title: 'Pregnancy Oral Care',
         tagline: 'Healthy Mom, Healthy Baby',
-        description: 'Our prenatal dental guidance ensures a healthy environment for both mom and baby to thrive — because oral health in pregnancy matters more than you think.',
+        description: 'Prenatal dental guidance ensuring a healthy and safe environment for mom and baby.',
         highlight: 'For Moms-to-Be',
         color: '#FF8A65',
         bg: '#FFF3E0',
@@ -81,7 +81,7 @@ const specialties = [
         emoji: '⚽',
         title: 'Sports Dentistry',
         tagline: 'Compete with Total Confidence',
-        description: 'We provide specialized trauma management and custom-fit mouthguards — giving your child the protection they need to compete safely and confidently.',
+        description: 'Specialized mouthguards and trauma care help your child compete with confidence.',
         highlight: 'Custom Mouthguards',
         color: '#26C6DA',
         bg: '#E0F7FA',
@@ -102,7 +102,7 @@ export default function Specialties() {
                         <span className="gradient-text">What We Specialize In</span>
                     </h2>
                     <p className="section-subtitle">
-                        From newborns to teens, from laser precision to sports protection —
+                        From newborns to teens, from laser precision to sports protection,
                         every child's smile is in expert hands at Thalir.
                     </p>
                 </div>
@@ -142,7 +142,7 @@ export default function Specialties() {
                             <span className="specialties-cta-emoji">🌟</span>
                             <div>
                                 <h3>Not Sure Which Service Your Child Needs?</h3>
-                                <p>Book a free consultation — our specialists will guide you to the right care.</p>
+                                <p>Book a free consultation. Our specialists will guide you to the right care.</p>
                             </div>
                         </div>
                         <a href="https://wa.me/919043060968" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">

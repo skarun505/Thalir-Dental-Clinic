@@ -18,8 +18,7 @@ export default function Navbar({ onBookClick }) {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-inner">
                 <a href="#" className="navbar-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                    <img src="/images/thalir-logo.jpg" alt="Thalir Logo" />
-                    <span className="navbar-logo-text">Thalir <span>Dental</span></span>
+                    <img src="/images/thalir-logo.png" alt="Thalir Logo" />
                 </a>
 
                 <div className="nav-links">

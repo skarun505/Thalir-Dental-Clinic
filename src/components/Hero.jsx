@@ -3,12 +3,11 @@ export default function Hero({ onBookClick }) {
         <section className="hero" id="hero">
             <div className="container hero-content">
                 <div className="hero-badge">
-                    <img src="/images/thalir-logo.jpg" alt="Thalir Logo" className="hero-badge-logo" />
                     <span>#1 Pediatric Dental Clinic in Erode</span>
                 </div>
 
                 <div className="hero-mascot">
-                    <img src="/images/thalir-logo.jpg" alt="Thalir Dental Logo" />
+                    <img src="/images/thalir-logo.png" alt="Thalir Dental Logo" />
                 </div>
 
                 <h1>
