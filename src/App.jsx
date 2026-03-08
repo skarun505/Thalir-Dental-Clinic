@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FreeBanner from './components/FreeBanner';
-import Services from './components/Services';
 import WhyChooseUs from './components/WhyChooseUs';
 import Doctor from './components/Doctor';
 import Gallery from './components/Gallery';
@@ -49,7 +48,6 @@ function App() {
       <main>
         <Hero onBookClick={openBooking} />
         <FreeBanner onBookClick={openBooking} />
-        <Services />
         <Specialties />
         <NoCavityClub />
         <WhyChooseUs />

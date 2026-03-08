@@ -1,5 +1,17 @@
 import { useState } from 'react';
-import { insertAppointment } from '../lib/supabase';
+import emailjs from '@emailjs/browser';
+
+// ─── EmailJS Config ─────────────────────────────────────────────
+// 1. Go to https://emailjs.com → sign up free
+// 2. Add Email Service (Gmail) → copy Service ID
+// 3. Create Email Template → copy Template ID
+// 4. Go to Account → copy Public Key
+const EMAILJS_SERVICE_ID  = 'service_7rhtryp';
+const EMAILJS_TEMPLATE_ID = 'template_vb7c7dk';
+const EMAILJS_PUBLIC_KEY  = 'kSKn6zF1crgasUrGl';
+
+// ─── Clinic WhatsApp number ─────────────────────────────────────
+const CLINIC_WHATSAPP = '919043060968';
 
 const serviceOptions = [
     'Tooth Cleaning',
@@ -63,7 +75,40 @@ export default function BookingForm({ isOpen, onClose }) {
 
         setLoading(true);
         try {
-            await insertAppointment(formData);
+            // ── 1. Send Email via EmailJS ──────────────────────────
+            if (EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID') {
+                await emailjs.send(
+                    EMAILJS_SERVICE_ID,
+                    EMAILJS_TEMPLATE_ID,
+                    {
+                        parent_name:      formData.parentName,
+                        child_name:       formData.childName,
+                        child_age:        formData.childAge,
+                        phone:            formData.phone,
+                        service:          formData.service,
+                        appointment_date: formData.appointmentDate,
+                        appointment_time: formData.appointmentTime,
+                        notes:            formData.notes || 'None',
+                    },
+                    EMAILJS_PUBLIC_KEY
+                );
+            }
+
+            // ── 2. Open WhatsApp with pre-filled booking details ───
+            const msg =
+                `*New Appointment Request - Thalir Dental*\n\n` +
+                `*Parent:* ${formData.parentName}\n` +
+                `*Child:* ${formData.childName} (Age: ${formData.childAge})\n` +
+                `*Phone:* ${formData.phone}\n` +
+                `*Service:* ${formData.service}\n` +
+                `*Date:* ${formData.appointmentDate}\n` +
+                `*Time:* ${formData.appointmentTime}\n` +
+                `*Notes:* ${formData.notes || 'None'}\n\n` +
+                `_Sent from Thalir Dental website_`;
+
+            const waUrl = `https://wa.me/${CLINIC_WHATSAPP}?text=${encodeURIComponent(msg)}`;
+            window.open(waUrl, '_blank');
+
             setSuccess(true);
         } catch (err) {
             console.error('Booking error:', err);

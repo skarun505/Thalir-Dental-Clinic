@@ -1,7 +1,7 @@
 const specialties = [
     {
-        icon: 'fas fa-cut',
-        emoji: '✂️',
+        icon: 'fas fa-heart',
+        emoji: '🤱',
         title: 'Tongue & Lip Tie Specialty',
         tagline: 'Restoring the Joy of Breastfeeding',
         description: 'Precision laser care for tongue and lip ties, restoring the joy of breastfeeding.',

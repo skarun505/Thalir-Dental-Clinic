@@ -1,6 +1,6 @@
 const services = [
     {
-        icon: 'fas fa-cut',
+        icon: 'fas fa-heart',
         title: 'Tongue & Lip Tie Specialty',
         description: 'Precision laser care for tongue and lip ties, restoring the joy of breastfeeding.',
         color: 'pink',

@@ -1529,10 +1529,12 @@ select.form-input {
 }
 
 .footer-logo img {
-  height: 80px;
+  height: 90px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  background: var(--white);
+  border-radius: 12px;
+  padding: 8px 16px;
 }
 
 .footer-text {
