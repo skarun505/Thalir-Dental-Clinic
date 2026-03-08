@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thalirdental.com/sitemap.xml
