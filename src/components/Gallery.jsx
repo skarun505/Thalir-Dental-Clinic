@@ -1,31 +1,33 @@
+import { img } from '../lib/getImagePath';
+
 const galleryItems = [
     {
-        image: '/images/IMG_4547.jpeg',
+        image: img('/images/IMG_4547.jpeg'),
         icon: 'fas fa-hospital',
         label: 'Our Welcoming Clinic',
     },
     {
-        image: '/images/IMG_4548.jpeg',
+        image: img('/images/IMG_4548.jpeg'),
         icon: 'fas fa-tooth',
         label: 'Kid-Friendly Treatment Room',
     },
     {
-        image: '/images/IMG_4551.jpeg',
+        image: img('/images/IMG_4551.jpeg'),
         icon: 'fas fa-couch',
         label: 'Comfortable Care Space',
     },
     {
-        image: '/images/IMG_4552.jpeg',
+        image: img('/images/IMG_4552.jpeg'),
         icon: 'fas fa-stethoscope',
         label: 'Advanced Dental Equipment',
     },
     {
-        image: '/images/IMG_4554.jpeg',
+        image: img('/images/IMG_4554.jpeg'),
         icon: 'fas fa-gamepad',
         label: 'Fun Play Area',
     },
     {
-        image: '/images/IMG_4555.jpeg',
+        image: img('/images/IMG_4555.jpeg'),
         icon: 'fas fa-face-smile',
         label: 'Happy Little Patients',
     },

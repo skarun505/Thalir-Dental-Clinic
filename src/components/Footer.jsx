@@ -1,3 +1,5 @@
+import { img } from '../lib/getImagePath';
+
 export default function Footer() {
     const scrollTo = (id) => {
         const el = document.getElementById(id);
@@ -7,7 +9,7 @@ export default function Footer() {
     return (
         <footer className="footer">
             <div className="footer-logo">
-                <img src="/images/thalir-logo.png" alt="Thalir Dental Logo" />
+                <img src={img('/images/thalir-logo.png')} alt="Thalir Dental Logo" />
             </div>
             <p className="footer-text">
                 Making dental care fun, gentle, and memorable for every child.

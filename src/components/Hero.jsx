@@ -1,3 +1,5 @@
+import { img } from '../lib/getImagePath';
+
 export default function Hero({ onBookClick }) {
     return (
         <section className="hero" id="hero">
@@ -7,7 +9,7 @@ export default function Hero({ onBookClick }) {
                 </div>
 
                 <div className="hero-mascot">
-                    <img src="/images/thalir-logo.png" alt="Thalir Dental Logo" />
+                    <img src={img('/images/thalir-logo.png')} alt="Thalir Dental Logo" />
                 </div>
 
                 <h1>

@@ -1,16 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
+import { img } from '../lib/getImagePath';
 
 const clubPhotos = [
-    { src: '/images/IMG_3128.JPG', alt: 'No Cavity Club member with certificate' },
-    { src: '/images/IMG_5653.jpg', alt: 'Happy No Cavity Club member' },
-    { src: '/images/IMG_5676.jpeg', alt: 'Proud No Cavity Club member' },
-    { src: '/images/IMG_5817.jpeg', alt: 'No Cavity Club member celebrating' },
-    { src: '/images/IMG_5884.jpeg', alt: 'Smiling No Cavity Club member' },
-    { src: '/images/IMG_5935.jpeg', alt: 'No Cavity Club member with thumbs up' },
-    { src: '/images/IMG_6180.jpeg', alt: 'No Cavity Club member showing certificate' },
-    { src: '/images/IMG_6247.jpeg', alt: 'No Cavity Club member happy visit' },
-    { src: '/images/IMG_6248.jpeg', alt: 'No Cavity Club member proud smile' },
-    { src: '/images/IMG_6410.jpeg', alt: 'No Cavity Club member holding badge' },
+    { src: img('/images/IMG_3128.JPG'), alt: 'No Cavity Club member with certificate' },
+    { src: img('/images/IMG_5653.jpg'), alt: 'Happy No Cavity Club member' },
+    { src: img('/images/IMG_5676.jpeg'), alt: 'Proud No Cavity Club member' },
+    { src: img('/images/IMG_5817.jpeg'), alt: 'No Cavity Club member celebrating' },
+    { src: img('/images/IMG_5884.jpeg'), alt: 'Smiling No Cavity Club member' },
+    { src: img('/images/IMG_5935.jpeg'), alt: 'No Cavity Club member with thumbs up' },
+    { src: img('/images/IMG_6180.jpeg'), alt: 'No Cavity Club member showing certificate' },
+    { src: img('/images/IMG_6247.jpeg'), alt: 'No Cavity Club member happy visit' },
+    { src: img('/images/IMG_6248.jpeg'), alt: 'No Cavity Club member proud smile' },
+    { src: img('/images/IMG_6410.jpeg'), alt: 'No Cavity Club member holding badge' },
 ];
 
 

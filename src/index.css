@@ -887,169 +887,168 @@ textarea {
   text-align: center;
 }
 
-.doctor-card {
+/* Two-doctor grid */
+.doctors-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-4xl);
+}
+
+.doctor-profile-card {
   background: var(--bg-card);
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  max-width: 500px;
-  margin: 0 auto;
   border: 1px solid var(--border);
+  transition: all var(--transition-normal);
+  text-align: left;
 }
 
-.doctor-image-wrapper {
+.doctor-profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.doctor-profile-img-wrap {
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: 320px;
 }
 
-.doctor-image-wrapper img {
+.doctor-profile-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
   transition: transform var(--transition-slow);
 }
 
-.doctor-card:hover .doctor-image-wrapper img {
+.doctor-profile-card:hover .doctor-profile-img-wrap img {
   transform: scale(1.05);
 }
 
-.doctor-image-overlay {
+.doctor-profile-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  background: linear-gradient(transparent, var(--bg-card));
+  height: 120px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.45));
 }
 
-.doctor-info {
+.doctor-profile-badge {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  backdrop-filter: blur(6px);
+}
+
+.doctor-profile-badge.co-founder {
+  background: linear-gradient(135deg, #FF6B9D 0%, #BA68C8 100%);
+}
+
+.doctor-profile-info {
   padding: var(--space-lg);
 }
 
-.doctor-name {
+.doctor-profile-name {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  margin-bottom: var(--space-xs);
+  font-size: 1.6rem;
   color: var(--primary);
+  margin-bottom: 2px;
 }
 
-.doctor-title {
+.doctor-profile-degree {
+  display: inline-block;
+  background: var(--pastel-purple);
+  color: var(--primary);
+  padding: 2px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.doctor-profile-role {
   font-size: 0.9rem;
   color: var(--accent-pink);
   font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.doctor-profile-clinic {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 600;
   margin-bottom: var(--space-md);
 }
 
-.doctor-qualifications {
+.doctor-profile-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.doctor-profile-tags {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: var(--space-sm);
-  margin-bottom: var(--space-md);
 }
 
-.doctor-qual-badge {
-  background: var(--pastel-purple);
-  color: var(--primary);
-  padding: 4px 14px;
+.doctor-profile-tags span {
+  background: var(--pastel-blue);
+  color: var(--text-primary);
+  padding: 5px 12px;
   border-radius: var(--radius-pill);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
 }
 
-.doctor-message {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  font-style: italic;
-  position: relative;
-  padding: var(--space-md);
-  background: var(--pastel-blue);
-  border-radius: var(--radius-md);
+/* ===== Clinic Video Section ===== */
+.clinic-video-section {
+  text-align: center;
+  margin-top: var(--space-2xl);
 }
 
-.doctor-message::before {
-  content: '"';
-  font-family: var(--font-display);
-  font-size: 3rem;
-  color: var(--primary);
-  opacity: 0.3;
-  position: absolute;
-  top: -5px;
-  left: 10px;
-}
-
-/* ===== Team Section ===== */
-.team-section {
-  margin-top: var(--space-4xl);
-}
-
-.team-section-title {
+.clinic-video-title {
   font-family: var(--font-display);
   font-size: 1.8rem;
   color: var(--text-primary);
   margin-bottom: var(--space-xs);
 }
 
-.team-section-subtitle {
+.clinic-video-subtitle {
   color: var(--text-secondary);
-  font-size: 1rem;
-  margin-bottom: var(--space-2xl);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-xl);
 }
 
-.team-grid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.team-member-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border);
-  transition: all var(--transition-normal);
-  text-align: left;
-}
-
-.team-member-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.team-member-img {
-  width: 80px;
-  height: 80px;
-  min-width: 80px;
-  border-radius: var(--radius-full);
+.clinic-video-wrapper {
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 3px solid var(--pastel-blue);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border);
+  max-width: 800px;
+  margin: 0 auto;
+  background: #000;
 }
 
-.team-member-img img {
+.clinic-video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.team-member-info h4 {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--primary);
-  margin-bottom: 2px;
-}
-
-.team-member-info p {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  font-weight: 600;
+  display: block;
+  max-height: 480px;
+  background: #000;
 }
 
 /* ===== Gallery Section ===== */
@@ -1857,10 +1856,9 @@ select.form-input {
     grid-column: 1 / -1;
   }
 
-  .team-grid {
-    display: grid;
+  .doctors-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
+    gap: var(--space-xl);
   }
 
   .contact-grid {
