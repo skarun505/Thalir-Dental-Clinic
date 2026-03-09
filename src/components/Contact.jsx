@@ -66,7 +66,7 @@ export default function Contact() {
 
                     <div className="map-container">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.7!2d77.7246!3d11.3428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f46e8a5a453%3A0x387e3f9b7c3e4e9a!2sBrough%20Rd%2C%20Erode%20Fort%2C%20Erode%2C%20Tamil%20Nadu%20638001!5e0!3m2!1sen!2sin!4v1709369600000"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8053.122241830582!2d77.71748224549275!3d11.339621355478124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f4f5b4bb98b%3A0x3614dd2319aad334!2sThalir%20Kids%20Speciality%20Dental%20Clinic!5e0!3m2!1sen!2sin!4v1773051405993!5m2!1sen!2sin"
                             allowFullScreen=""
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
