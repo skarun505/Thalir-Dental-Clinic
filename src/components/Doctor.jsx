@@ -63,7 +63,7 @@ export default function Doctor() {
                             <p className="doctor-profile-role">Pediatric and Preventive Dentist</p>
                             <p className="doctor-profile-clinic">Thalir Kids Speciality Dental Clinic</p>
                             <p className="doctor-profile-desc">
-                                Specialized in Special Health Care Needs (SHCN) dentistry, she has a remarkable ability to adapt her clinical approach to suit the sensory, physical, and developmental requirements of the special ones. She is an expert in early orthodontic treatment. By identifying growth issues in earliest stages, she uses interceptive techniques to guide jaw and tooth development.
+                                As a pediatric dentist, My practice is built on the foundation of empathy and a deep understanding of kids psychology. I ensure that every child receives high quality dental care in an environment where they feel safe, heard, and empowered.
                             </p>
                             <div className="doctor-profile-tags">
                                 <span>❤️ SHCN Dentistry</span>
