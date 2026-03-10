@@ -33,7 +33,7 @@ export default function Doctor() {
                             <p className="doctor-profile-role">Pediatric and Preventive Dentist</p>
                             <p className="doctor-profile-clinic">Thalir Kids Speciality Dental Clinic</p>
                             <p className="doctor-profile-desc">
-                                A specialist in Pediatric Laser Dentistry and utilizes advanced technology to provide minimally invasive treatments. He is highly sought after for his expertise in managing traumatic dental injuries, providing specialized emergency care for children when they need it most.
+                                I am passionate about making dental visits joyful and fear-free for every child. With compassion, behavior guidance, and advanced pediatric dentistry, I strive to ensure each visit builds trust, confidence, and healthy smiles for life.
                             </p>
                             <div className="doctor-profile-tags">
                                 <span>🦷 Laser Dentistry</span>
