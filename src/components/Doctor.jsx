@@ -73,23 +73,7 @@ export default function Doctor() {
 
                 </div>
 
-                {/* Clinic Overview Video */}
-                <div className="clinic-video-section scroll-animate">
-                    <h3 className="clinic-video-title">
-                        <i className="fas fa-play-circle" style={{ color: '#6C63FF' }}></i> Fun-Filled Clinic Tour
-                    </h3>
-                    <p className="clinic-video-subtitle">Take a tour of our child-friendly clinic</p>
-                    <div className="clinic-video-wrapper">
-                        <video
-                            controls
-                            preload="metadata"
-                            className="clinic-video"
-                        >
-                            <source src={img('/images/dental-clinic-overview.mp4')} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
+
 
             </div>
         </section>

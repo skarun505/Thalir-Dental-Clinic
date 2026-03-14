@@ -42,8 +42,18 @@ export default function Gallery() {
                 <p className="section-subtitle">
                     Take a peek inside our colorful, fun-filled dental clinic
                 </p>
+                <div className="clinic-video-wrapper scroll-animate" style={{ marginBottom: 'var(--space-2xl)' }}>
+                    <video
+                        controls
+                        preload="metadata"
+                        className="clinic-video"
+                    >
+                        <source src={img('/images/dental-clinic-overview.mp4')} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
 
-                <div className="gallery-slider">
+                <div className="gallery-slider scroll-animate">
                     {galleryItems.map((item, idx) => (
                         <div className="gallery-item" key={idx}>
                             <img src={item.image} alt={item.label} loading="lazy" />
