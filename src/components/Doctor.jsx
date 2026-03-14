@@ -31,7 +31,6 @@ export default function Doctor() {
                             <h3 className="doctor-profile-name">Dr. R. Midhunraj</h3>
                             <span className="doctor-profile-degree">M.D.S</span>
                             <p className="doctor-profile-role">Pediatric and Preventive Dentist</p>
-                            <p className="doctor-profile-clinic">Thalir Kids Speciality Dental Clinic</p>
                             <p className="doctor-profile-desc">
                                 I am passionate about making dental visits joyful and fear-free for every child. With compassion, behavior guidance, and advanced pediatric dentistry, I strive to ensure each visit builds trust, confidence, and healthy smiles for life.
                             </p>
@@ -61,7 +60,6 @@ export default function Doctor() {
                             <h3 className="doctor-profile-name">Dr. K. Pavithra</h3>
                             <span className="doctor-profile-degree">M.D.S</span>
                             <p className="doctor-profile-role">Pediatric and Preventive Dentist</p>
-                            <p className="doctor-profile-clinic">Thalir Kids Speciality Dental Clinic</p>
                             <p className="doctor-profile-desc">
                                 As a pediatric dentist, My practice is built on the foundation of empathy and a deep understanding of kids psychology. I ensure that every child receives high quality dental care in an environment where they feel safe, heard, and empowered.
                             </p>
@@ -85,7 +83,6 @@ export default function Doctor() {
                         <video
                             controls
                             preload="metadata"
-                            poster={img('/images/clinic-interior.png')}
                             className="clinic-video"
                         >
                             <source src={img('/images/dental-clinic-overview.mp4')} type="video/mp4" />

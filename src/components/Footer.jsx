@@ -9,7 +9,7 @@ export default function Footer() {
     return (
         <footer className="footer">
             <div className="footer-logo">
-                <img src={img('/images/thalir-logo.png')} alt="Thalir Dental Logo" />
+                <img src={img('/images/Thalir Logo.png')} alt="Thalir Dental Logo" />
             </div>
             <p className="footer-text">
                 Making dental care fun, gentle, and memorable for every child.
@@ -35,7 +35,8 @@ export default function Footer() {
             <div className="footer-divider"></div>
 
             <p className="footer-copyright">
-                &copy; 2026 Thalir Dental Clinic. All rights reserved. Made with <i className="fas fa-heart" style={{ color: '#FF6B9D' }}></i> for little smiles.
+                &copy; 2026 Thalir Dental Clinic. All rights reserved.<br />
+                Made with <i className="fas fa-heart" style={{ color: '#FF6B9D' }}></i> for little smiles.
             </p>
 
 
