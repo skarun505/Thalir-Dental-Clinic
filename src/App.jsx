@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import FreeBanner from './components/FreeBanner';
 import WhyChooseUs from './components/WhyChooseUs';
 import Doctor from './components/Doctor';
 import Gallery from './components/Gallery';
@@ -15,6 +14,7 @@ import BookingForm from './components/BookingForm';
 import StickyBar from './components/StickyBar';
 import ExitPopup from './components/ExitPopup';
 import Footer from './components/Footer';
+import Blog from './components/Blog';
 
 function App() {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -47,12 +47,12 @@ function App() {
       <Navbar onBookClick={openBooking} />
       <main>
         <Hero onBookClick={openBooking} />
-        <FreeBanner onBookClick={openBooking} />
         <Specialties />
         <NoCavityClub />
         <WhyChooseUs />
         <Doctor />
         <Gallery />
+        <Blog />
         <DentalTips />
         <SmileOfMonth />
         <Testimonials />

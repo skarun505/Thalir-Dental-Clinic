@@ -142,7 +142,7 @@ export default function Specialties() {
                             <span className="specialties-cta-emoji">🌟</span>
                             <div>
                                 <h3>Not Sure Which Service Your Child Needs?</h3>
-                                <p>Book a free consultation. Our specialists will guide you to the right care.</p>
+                                <p>Our specialists will guide you to the right care for your child's smile.</p>
                             </div>
                         </div>
                         <a href="https://wa.me/919043060968" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">

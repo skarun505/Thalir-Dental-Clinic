@@ -1,20 +1,3 @@
-import { useState, useEffect, useRef } from 'react';
-import { img } from '../lib/getImagePath';
-
-const clubPhotos = [
-    { src: img('/images/IMG_3128.JPG'), alt: 'No Cavity Club member with certificate' },
-    { src: img('/images/IMG_5653.jpg'), alt: 'Happy No Cavity Club member' },
-    { src: img('/images/IMG_5676.jpeg'), alt: 'Proud No Cavity Club member' },
-    { src: img('/images/IMG_5817.jpeg'), alt: 'No Cavity Club member celebrating' },
-    { src: img('/images/IMG_5884.jpeg'), alt: 'Smiling No Cavity Club member' },
-    { src: img('/images/IMG_5935.jpeg'), alt: 'No Cavity Club member with thumbs up' },
-    { src: img('/images/IMG_6180.jpeg'), alt: 'No Cavity Club member showing certificate' },
-    { src: img('/images/IMG_6247.jpeg'), alt: 'No Cavity Club member happy visit' },
-    { src: img('/images/IMG_6248.jpeg'), alt: 'No Cavity Club member proud smile' },
-    { src: img('/images/IMG_6410.jpeg'), alt: 'No Cavity Club member holding badge' },
-];
-
-
 const benefits = [
     { icon: 'fas fa-certificate', text: 'Official membership certificate' },
     { icon: 'fas fa-gift', text: 'Surprise gift bag on every visit' },
@@ -23,23 +6,6 @@ const benefits = [
 ];
 
 export default function NoCavityClub() {
-    const [activeSlide, setActiveSlide] = useState(0);
-    const sliderRef = useRef(null);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setActiveSlide((prev) => (prev + 1) % clubPhotos.length);
-        }, 4000);
-        return () => clearInterval(timer);
-    }, []);
-
-    useEffect(() => {
-        if (sliderRef.current) {
-            const scrollTo = activeSlide * sliderRef.current.offsetWidth;
-            sliderRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
-        }
-    }, [activeSlide]);
-
     return (
         <section className="section ncc-section" id="no-cavity-club">
             <div className="container">
@@ -54,27 +20,6 @@ export default function NoCavityClub() {
                     <p className="section-subtitle">
                         Our exciting new initiative to make cavity prevention fun and rewarding for every child!
                     </p>
-                </div>
-
-                {/* Photo Carousel */}
-                <div className="ncc-carousel-wrapper scroll-animate">
-                    <div className="ncc-carousel" ref={sliderRef}>
-                        {clubPhotos.map((photo, idx) => (
-                            <div className="ncc-slide" key={idx}>
-                                <img src={photo.src} alt={photo.alt} loading="lazy" />
-                            </div>
-                        ))}
-                    </div>
-                    <div className="ncc-dots">
-                        {clubPhotos.map((_, idx) => (
-                            <button
-                                key={idx}
-                                className={`ncc-dot ${activeSlide === idx ? 'active' : ''}`}
-                                onClick={() => setActiveSlide(idx)}
-                                aria-label={`View photo ${idx + 1}`}
-                            ></button>
-                        ))}
-                    </div>
                 </div>
 
                 {/* Info Cards */}
