@@ -27,10 +27,9 @@ const galleryItems = [
         label: 'Fun Play Area',
     },
     {
-        image: img('/images/IMG_4555.jpeg'),
+        image: img('/images/IMG_8173.jpg'),
         icon: 'fas fa-face-smile',
         label: 'Happy Little Patients',
-        objectPosition: 'center 20%',
     },
 ];
 

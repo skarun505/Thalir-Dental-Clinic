@@ -141,6 +141,15 @@ textarea {
   padding: var(--space-3xl) 0;
 }
 
+/* Reduce gap between Doctor and Gallery sections */
+.doctor-section {
+  padding-bottom: var(--space-sm);
+}
+
+#gallery {
+  padding-top: var(--space-sm);
+}
+
 .section-title {
   font-family: var(--font-display);
   font-size: 2rem;
@@ -1060,7 +1069,7 @@ textarea {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-xl);
-  margin-bottom: var(--space-4xl);
+  margin-bottom: 0;
 }
 
 .doctor-profile-card {
