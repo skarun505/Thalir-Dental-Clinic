@@ -65,6 +65,28 @@ export default function Gallery() {
                     ))}
                 </div>
             </div>
+
+            {/* Inside Our Clinic — scrolling strip below the tour */}
+            <div className="hero-interior-strip" style={{ marginTop: '2.5rem' }}>
+                <div className="hero-interior-label">
+                    <i className="fas fa-hospital"></i> Inside Our Clinic
+                </div>
+                <div className="hero-interior-scroll">
+                    {galleryItems.map((item, idx) => (
+                        <div className="hero-interior-item" key={idx}>
+                            <img src={item.image} alt={item.label} loading="lazy" />
+                            <span className="hero-interior-caption">{item.label}</span>
+                        </div>
+                    ))}
+                    {/* Duplicate for seamless loop */}
+                    {galleryItems.map((item, idx) => (
+                        <div className="hero-interior-item" key={`dup-${idx}`} aria-hidden="true">
+                            <img src={item.image} alt={item.label} loading="lazy" />
+                            <span className="hero-interior-caption">{item.label}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </section>
     );
 }

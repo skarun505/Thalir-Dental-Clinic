@@ -597,7 +597,6 @@ textarea {
 }
 
 .hero-content {
-  text-align: center;
   position: relative;
   z-index: 2;
   flex: 1;
@@ -606,6 +605,55 @@ textarea {
   align-items: center;
   justify-content: center;
   padding-bottom: var(--space-3xl);
+  gap: var(--space-2xl);
+}
+
+.hero-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-doctors-img {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 20px 40px rgba(108, 99, 255, 0.18));
+}
+
+.hero-doctors-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    align-items: flex-end;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 0;
+  }
+  .hero-text {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+    padding-right: var(--space-xl);
+  }
+  .hero-doctors-img {
+    flex-shrink: 0;
+    width: 45%;
+    max-width: 480px;
+    margin: 0;
+    align-self: flex-end;
+  }
+  .hero-mascot {
+    display: none;
+  }
 }
 
 .hero-badge {
@@ -665,18 +713,27 @@ textarea {
   font-size: 1.1rem;
   color: var(--text-secondary);
   margin-bottom: var(--space-xl);
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 460px;
   animation: slideUp 0.6s ease-out 0.2s backwards;
 }
 
 .hero-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: var(--space-md);
   align-items: center;
+  justify-content: center;
   animation: slideUp 0.6s ease-out 0.4s backwards;
+}
+
+@media (min-width: 768px) {
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+  .hero-stats {
+    justify-content: flex-start;
+  }
 }
 
 .hero-stats {
@@ -3090,3 +3147,109 @@ select.form-input {
   .adm-post-item { flex-direction: column; }
   .adm-post-actions { align-self: flex-end; }
 }
+
+/* ===== Clinic Infinity Scroll ===== */
+.clinic-scroll-section {
+  padding: 4rem 0;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.infinity-scroll-container {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 2rem 0;
+  display: flex;
+}
+
+.infinity-scroll-container::before,
+.infinity-scroll-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.infinity-scroll-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background) 0%, transparent 100%);
+}
+
+.infinity-scroll-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background) 0%, transparent 100%);
+}
+
+.ncc-section .infinity-scroll-container::before {
+  background: linear-gradient(to right, #E0F4FF 0%, transparent 100%);
+}
+
+.ncc-section .infinity-scroll-container::after {
+  background: linear-gradient(to left, #E0F4FF 0%, transparent 100%);
+}
+
+.infinity-scroll-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.infinity-scroll-track:hover {
+  animation-play-state: paused;
+}
+
+.scroll-image-card {
+  width: 300px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-image-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.scroll-image-card:hover img {
+  transform: scale(1.05);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px)); /* -50% of the total track width (since we duplicated), minus half the gap */
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-image-card {
+    width: 250px;
+    height: 200px;
+  }
+  .infinity-scroll-container::before,
+  .infinity-scroll-container::after {
+    width: 50px;
+  }
+}
+

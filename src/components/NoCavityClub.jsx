@@ -1,3 +1,5 @@
+import ClinicScroll from './ClinicScroll';
+
 const benefits = [
     { icon: 'fas fa-certificate', text: 'Official membership certificate' },
     { icon: 'fas fa-gift', text: 'Surprise gift bag on every visit' },
@@ -20,6 +22,11 @@ export default function NoCavityClub() {
                     <p className="section-subtitle">
                         Our exciting new initiative to make cavity prevention fun and rewarding for every child!
                     </p>
+                </div>
+
+                {/* Wall of Fame Images */}
+                <div style={{ marginTop: '1rem', position: 'relative', zIndex: 2 }}>
+                    <ClinicScroll />
                 </div>
 
                 {/* Info Cards */}

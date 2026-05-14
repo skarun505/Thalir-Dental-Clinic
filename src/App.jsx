@@ -6,6 +6,7 @@ import Doctor from './components/Doctor';
 import Gallery from './components/Gallery';
 import DentalTips from './components/DentalTips';
 import NoCavityClub from './components/NoCavityClub';
+import ClinicScroll from './components/ClinicScroll';
 import Testimonials from './components/Testimonials';
 import SmileOfMonth from './components/SmileOfMonth';
 import Specialties from './components/Specialties';
@@ -47,11 +48,11 @@ function App() {
       <Navbar onBookClick={openBooking} />
       <main>
         <Hero onBookClick={openBooking} />
+        <Doctor />
+        <Gallery />
         <Specialties />
         <NoCavityClub />
         <WhyChooseUs />
-        <Doctor />
-        <Gallery />
         <Blog />
         <DentalTips />
         <SmileOfMonth />
