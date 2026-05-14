@@ -2,18 +2,18 @@ import React from 'react';
 import { img } from '../lib/getImagePath';
 
 const images = [
-  'IMG_3128.JPG',
-  'IMG_5653.jpg',
-  'IMG_5676.jpeg',
-  'IMG_5817.jpeg',
-  'IMG_5935.jpeg',
-  'IMG_6180.jpeg',
-  'IMG_6410.jpeg',
-  'IMG_7211.jpg',
-  'IMG_7603.JPG.jpeg',
-  'IMG_7993.JPG.jpeg',
-  'IMG_8013.JPG.jpeg',
-  'IMG_8075.jpg'
+  '1.svg',
+  '2.svg',
+  '3.svg',
+  '4.svg',
+  '5.svg',
+  '6.svg',
+  '7.svg',
+  '8.svg',
+  '9.svg',
+  '10.svg',
+  '11.svg',
+  '12.svg',
 ];
 
 export default function ClinicScroll() {
@@ -23,13 +23,13 @@ export default function ClinicScroll() {
         <div className="infinity-scroll-track">
           {images.map((image, index) => (
             <div className="scroll-image-card" key={`img1-${index}`}>
-              <img src={img(`/images/clinic/${image}`)} alt={`Clinic patient ${index + 1}`} loading="lazy" />
+              <img src={img(`/images/no-cavity/${image}`)} alt={`Clinic patient ${index + 1}`} loading="lazy" />
             </div>
           ))}
           {/* Duplicate for seamless infinite scrolling */}
           {images.map((image, index) => (
             <div className="scroll-image-card" key={`img2-${index}`}>
-              <img src={img(`/images/clinic/${image}`)} alt={`Clinic patient ${index + 1}`} loading="lazy" />
+              <img src={img(`/images/no-cavity/${image}`)} alt={`Clinic patient ${index + 1}`} loading="lazy" />
             </div>
           ))}
         </div>
