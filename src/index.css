@@ -143,11 +143,11 @@ textarea {
 
 /* Reduce gap between Doctor and Gallery sections */
 .doctor-section {
-  padding-bottom: var(--space-sm);
+  padding-bottom: var(--space-2xl);
 }
 
 #gallery {
-  padding-top: var(--space-sm);
+  padding-top: var(--space-2xl);
 }
 
 .section-title {

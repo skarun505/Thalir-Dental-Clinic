@@ -30,6 +30,7 @@ const galleryItems = [
         image: img('/images/IMG_8173.jpg'),
         icon: 'fas fa-face-smile',
         label: 'Happy Little Patients',
+        objectPosition: 'center 25%',
     },
 ];
 
