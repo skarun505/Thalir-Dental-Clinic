@@ -3,6 +3,18 @@ import { img } from '../lib/getImagePath';
 export default function Hero({ onBookClick }) {
     return (
         <section className="hero" id="hero">
+
+            {/* ── Centered Brand Row ── */}
+            <div className="hero-brand-row">
+                <div className="hero-brand-logo">
+                    <img src={img('/images/thalir-logo.png')} alt="Thalir Dental Clinic Logo" />
+                </div>
+                <div className="hero-brand-text">
+                    <span className="hero-brand-name">Thalir Dental Clinic</span>
+                    <span className="hero-brand-tagline">Pediatric & Preventive Dentistry</span>
+                </div>
+            </div>
+
             <div className="container hero-content">
 
                 {/* Left: Text */}
@@ -52,10 +64,6 @@ export default function Hero({ onBookClick }) {
 
                 {/* Right: Doctors Image */}
                 <div className="hero-doctors-img">
-                    {/* Logo badge floating over the doctors image */}
-                    <div className="hero-logo-overlay">
-                        <img src={img('/images/thalir-logo.png')} alt="Thalir Dental Clinic Logo" />
-                    </div>
                     <img
                         src={img('/images/doctors-both.png')}
                         alt="Dr. Midhunraj & Dr. Pavithra — Thalir Dental"
