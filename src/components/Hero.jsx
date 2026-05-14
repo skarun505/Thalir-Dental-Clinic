@@ -52,6 +52,10 @@ export default function Hero({ onBookClick }) {
 
                 {/* Right: Doctors Image */}
                 <div className="hero-doctors-img">
+                    {/* Logo badge floating over the doctors image */}
+                    <div className="hero-logo-overlay">
+                        <img src={img('/images/thalir-logo.png')} alt="Thalir Dental Clinic Logo" />
+                    </div>
                     <img
                         src={img('/images/doctors-both.png')}
                         alt="Dr. Midhunraj & Dr. Pavithra — Thalir Dental"

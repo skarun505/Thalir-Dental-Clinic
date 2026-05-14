@@ -622,6 +622,12 @@ textarea {
   margin: 0 auto;
   animation: float 4s ease-in-out infinite;
   filter: drop-shadow(0 20px 40px rgba(108, 99, 255, 0.18));
+  position: relative;
+}
+
+/* Logo badge — hidden on mobile (mascot shows instead) */
+.hero-logo-overlay {
+  display: none;
 }
 
 .hero-doctors-img img {
@@ -653,6 +659,31 @@ textarea {
   }
   .hero-mascot {
     display: none;
+  }
+  /* Logo badge visible on desktop */
+  .hero-logo-overlay {
+    display: block;
+    position: absolute;
+    top: 24px;
+    left: -36px;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.22), 0 2px 8px rgba(0,0,0,0.08);
+    border: 3px solid rgba(108, 99, 255, 0.18);
+    overflow: hidden;
+    animation: float 5s ease-in-out infinite reverse;
+    z-index: 10;
+    padding: 6px;
+  }
+  .hero-logo-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
   }
 }
 

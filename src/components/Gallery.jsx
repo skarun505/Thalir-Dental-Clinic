@@ -30,6 +30,7 @@ const galleryItems = [
         image: img('/images/IMG_4555.jpeg'),
         icon: 'fas fa-face-smile',
         label: 'Happy Little Patients',
+        objectPosition: 'center 20%',
     },
 ];
 
@@ -59,7 +60,7 @@ export default function Gallery() {
 
                     {galleryItems.map((item, idx) => (
                         <div className="gallery-item" key={idx}>
-                            <img src={item.image} alt={item.label} loading="lazy" />
+                            <img src={item.image} alt={item.label} loading="lazy" style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined} />
                             <div className="gallery-item-label"><i className={item.icon}></i> {item.label}</div>
                         </div>
                     ))}
@@ -74,14 +75,14 @@ export default function Gallery() {
                 <div className="hero-interior-scroll">
                     {galleryItems.map((item, idx) => (
                         <div className="hero-interior-item" key={idx}>
-                            <img src={item.image} alt={item.label} loading="lazy" />
+                            <img src={item.image} alt={item.label} loading="lazy" style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined} />
                             <span className="hero-interior-caption">{item.label}</span>
                         </div>
                     ))}
                     {/* Duplicate for seamless loop */}
                     {galleryItems.map((item, idx) => (
                         <div className="hero-interior-item" key={`dup-${idx}`} aria-hidden="true">
-                            <img src={item.image} alt={item.label} loading="lazy" />
+                            <img src={item.image} alt={item.label} loading="lazy" style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined} />
                             <span className="hero-interior-caption">{item.label}</span>
                         </div>
                     ))}
