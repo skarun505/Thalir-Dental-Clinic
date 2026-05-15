@@ -16,6 +16,7 @@ import StickyBar from './components/StickyBar';
 import ExitPopup from './components/ExitPopup';
 import Footer from './components/Footer';
 import Blog from './components/Blog';
+import LocationPopup from './components/LocationPopup';
 
 function App() {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -63,6 +64,7 @@ function App() {
       <StickyBar onBookClick={openBooking} />
       <BookingForm isOpen={bookingOpen} onClose={closeBooking} />
       <ExitPopup onBookClick={openBooking} />
+      <LocationPopup />
     </>
   );
 }
