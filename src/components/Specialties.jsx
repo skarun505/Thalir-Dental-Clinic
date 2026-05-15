@@ -1,10 +1,13 @@
+import { img } from '../lib/getImagePath';
+
 const specialties = [
     {
         icon: 'fas fa-heart',
         emoji: '🤱',
+        image: 'images/specialties/tongue-tie.webp',
         title: 'Tongue & Lip Tie Specialty',
         tagline: 'Restoring the Joy of Breastfeeding',
-        description: 'Precision laser care for tongue and lip ties, restoring the joy of breastfeeding.',
+        description: 'Precision laser care for tongue and lip ties, restoring the joy of breastfeeding, speech clarity, dental health and facial development.',
         highlight: 'Laser Precision',
         color: '#FF6B9D',
         bg: '#FFE0EC',
@@ -13,7 +16,8 @@ const specialties = [
     {
         icon: 'fas fa-hand-holding-heart',
         emoji: '💜',
-        title: 'Special Needs Dentistry',
+        image: 'images/specialties/special-needs.jpeg',
+        title: 'Special Health Care Needs Dentistry',
         tagline: 'Care at Your Child\'s Pace',
         description: "Sensory-friendly dental care tailored to your child's own rhythm and unique needs.",
         highlight: 'Sensory Friendly',
@@ -24,9 +28,10 @@ const specialties = [
     {
         icon: 'fas fa-shield-alt',
         emoji: '🛡️',
+        image: 'images/specialties/preventive-care.png',
         title: 'Preventive Oral Care',
         tagline: 'Strong Teeth from Day One',
-        description: "Proactive care to keep your child's teeth healthy and strong from the very first.",
+        description: 'Non invasive oral care for early prevention of decay and mechanical barrier for teeth.',
         highlight: 'Starting from Birth',
         color: '#6BCB77',
         bg: '#E8F5E9',
@@ -35,6 +40,7 @@ const specialties = [
     {
         icon: 'fas fa-lungs',
         emoji: '🌬️',
+        image: 'images/specialties/airway-dentistry.jpeg',
         title: 'Airway Dentistry',
         tagline: 'Breathe, Sleep & Grow Fully',
         description: 'We look beyond teeth to help your child breathe, sleep, and grow with confidence.',
@@ -46,6 +52,7 @@ const specialties = [
     {
         icon: 'fas fa-teeth',
         emoji: '😁',
+        image: 'images/specialties/early-orthodontic.webp',
         title: 'Early Orthodontic Care',
         tagline: 'Shaping Confident Smiles Early',
         description: 'Early habit correction creates the space for healthy adult teeth and great smiles.',
@@ -57,6 +64,7 @@ const specialties = [
     {
         icon: 'fas fa-smile-beam',
         emoji: '😊',
+        image: 'images/specialties/pain-free.png',
         title: 'Pain Free Dentistry',
         tagline: 'Smiles Without the Stress',
         description: 'Safe sedation ensures your child gets a healthy smile with absolutely no anxiety.',
@@ -68,6 +76,7 @@ const specialties = [
     {
         icon: 'fas fa-baby',
         emoji: '🤰',
+        image: 'images/specialties/pregnancy-care.jpeg',
         title: 'Pregnancy Oral Care',
         tagline: 'Healthy Mom, Healthy Baby',
         description: 'Prenatal dental guidance ensuring a healthy and safe environment for mom and baby.',
@@ -79,6 +88,7 @@ const specialties = [
     {
         icon: 'fas fa-futbol',
         emoji: '⚽',
+        image: 'images/specialties/sports-dentistry.jpeg',
         title: 'Sports Dentistry',
         tagline: 'Compete with Total Confidence',
         description: 'Specialized mouthguards and trauma care help your child compete with confidence.',
@@ -125,6 +135,11 @@ export default function Specialties() {
                                 <div className="specialty-icon-wrap" style={{ background: item.bg }}>
                                     <i className={item.icon} style={{ color: item.color }}></i>
                                 </div>
+                                {item.image && (
+                                    <div className="specialty-img-wrap">
+                                        <img src={img(item.image)} alt={item.title} className="specialty-img" />
+                                    </div>
+                                )}
                                 <h3 className="specialty-title">{item.title}</h3>
                                 <p className="specialty-tagline" style={{ color: item.color }}>{item.tagline}</p>
                                 <p className="specialty-desc">{item.description}</p>

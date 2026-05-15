@@ -27,7 +27,7 @@ export default function Footer() {
 
             <div className="footer-social">
                 <a href="#" className="footer-social-icon" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-                <a href="#" className="footer-social-icon" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/thalirkidsdental?igsh=a2F3czZpMzBlZXR6&utm_source=qr" target="_blank" rel="noopener noreferrer" className="footer-social-icon" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
                 <a href="#" className="footer-social-icon" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
                 <a href="https://wa.me/919043060968" target="_blank" rel="noopener noreferrer" className="footer-social-icon" aria-label="WhatsApp"><i className="fab fa-whatsapp"></i></a>
             </div>

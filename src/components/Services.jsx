@@ -2,19 +2,19 @@ const services = [
     {
         icon: 'fas fa-heart',
         title: 'Tongue & Lip Tie Specialty',
-        description: 'Precision laser care for tongue and lip ties, restoring the joy of breastfeeding.',
+        description: 'Precision laser care for tongue and lip ties, restoring the joy of breastfeeding, speech clarity, dental health and facial development.',
         color: 'pink',
     },
     {
         icon: 'fas fa-hand-holding-heart',
-        title: 'Special Needs Dentistry',
+        title: 'Special Health Care Needs Dentistry',
         description: "Sensory-friendly dental care tailored to your child's own rhythm and unique needs.",
         color: 'blue',
     },
     {
         icon: 'fas fa-shield-alt',
         title: 'Preventive Oral Care',
-        description: "Proactive care to keep your child's teeth healthy and strong from the very first.",
+        description: 'Non invasive oral care for early prevention of decay and mechanical barrier for teeth.',
         color: 'green',
     },
     {
