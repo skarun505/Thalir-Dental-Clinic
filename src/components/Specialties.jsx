@@ -65,6 +65,7 @@ const specialties = [
         icon: 'fas fa-smile-beam',
         emoji: '😊',
         image: 'images/specialties/pain-free.png',
+        imagePosition: 'center top',
         title: 'Pain Free Dentistry',
         tagline: 'Smiles Without the Stress',
         description: 'Safe sedation ensures your child gets a healthy smile with absolutely no anxiety.',
@@ -77,6 +78,7 @@ const specialties = [
         icon: 'fas fa-baby',
         emoji: '🤰',
         image: 'images/specialties/pregnancy-care.jpeg',
+        imagePosition: 'center 30%',
         title: 'Pregnancy Oral Care',
         tagline: 'Healthy Mom, Healthy Baby',
         description: 'Prenatal dental guidance ensuring a healthy and safe environment for mom and baby.',
@@ -137,7 +139,7 @@ export default function Specialties() {
                                 </div>
                                 {item.image && (
                                     <div className="specialty-img-wrap">
-                                        <img src={img(item.image)} alt={item.title} className="specialty-img" />
+                                        <img src={img(item.image)} alt={item.title} className="specialty-img" style={item.imagePosition ? { objectPosition: item.imagePosition } : {}} />
                                     </div>
                                 )}
                                 <h3 className="specialty-title">{item.title}</h3>
