@@ -13,7 +13,7 @@ export default function SmileOfMonth() {
                     <img src={img('/images/IMG_8173.jpg')} alt="Smile of the month - Happy Child" loading="lazy" style={{ objectPosition: 'center 15%', height: '400px' }} />
                     <div className="smile-info">
                         <div className="trophy"><i className="fas fa-trophy" style={{ color: '#FFD93D', fontSize: '2rem' }}></i></div>
-                        <h3>Little Aarav - March 2026</h3>
+                        <h3>Little Aarav - May 2026</h3>
                         <p>
                             Aarav was super brave during his first cavity filling!
                             He earned 5 gold stickers and a superhero certificate!
