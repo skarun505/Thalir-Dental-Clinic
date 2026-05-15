@@ -21,6 +21,7 @@ export default function Doctor() {
                                 src={img('/images/dr-midhunraj.jpeg')}
                                 alt="Dr. R. Midhunraj, M.D.S - Pediatric Dentist"
                                 loading="lazy"
+                                style={{ objectPosition: 'center top' }}
                             />
                             <div className="doctor-profile-overlay"></div>
                             <div className="doctor-profile-badge">
@@ -49,7 +50,7 @@ export default function Doctor() {
                                 src={img('/images/dr-pavithra.jpeg')}
                                 alt="Dr. K. Pavithra, M.D.S - Pediatric Dentist"
                                 loading="lazy"
-                                style={{ objectPosition: 'center 12%' }}
+                                style={{ objectPosition: 'center 5%' }}
                             />
                             <div className="doctor-profile-overlay"></div>
                             <div className="doctor-profile-badge co-founder">

@@ -10,7 +10,7 @@ export default function SmileOfMonth() {
                 </p>
 
                 <div className="smile-card scroll-animate">
-                    <img src={img('/images/happy-child.png')} alt="Smile of the month - Happy Child" loading="lazy" />
+                    <img src={img('/images/IMG_8173.jpg')} alt="Smile of the month - Happy Child" loading="lazy" style={{ objectPosition: 'center 15%', height: '400px' }} />
                     <div className="smile-info">
                         <div className="trophy"><i className="fas fa-trophy" style={{ color: '#FFD93D', fontSize: '2rem' }}></i></div>
                         <h3>Little Aarav - March 2026</h3>
