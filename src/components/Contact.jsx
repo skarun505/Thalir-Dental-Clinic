@@ -10,16 +10,25 @@ export default function Contact() {
                 <div className="contact-grid">
                     <div>
                         <div className="contact-info-cards">
-                            <div className="contact-info-card">
-                                <div className="contact-icon"><i className="fas fa-map-marker-alt" style={{ color: '#FF6B9D' }}></i></div>
-                                <div>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=Thalir+Kids+Speciality+Dental+Clinic+Erode"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-info-card contact-location-card"
+                            >
+                                <div className="contact-icon contact-pin-icon"><i className="fas fa-map-marker-alt" style={{ color: '#FF6B9D' }}></i></div>
+                                <div style={{ flex: 1 }}>
                                     <h4>Our Location</h4>
                                     <p>424, Dr. Amsa Subramaniyam Hospital Complex, Brough Road, Erode – 638001</p>
                                     <p style={{ fontSize: '0.78rem', marginTop: '4px', color: '#BA68C8', fontWeight: 700 }}>
                                         📍 Next to Saveetha Hospital Signal
                                     </p>
+                                    <span className="location-directions-cta">
+                                        <i className="fas fa-location-arrow"></i> Get Directions
+                                        <i className="fas fa-chevron-right location-arrow-bounce"></i>
+                                    </span>
                                 </div>
-                            </div>
+                            </a>
 
                             <a href="tel:+919043060968" className="contact-info-card">
                                 <div className="contact-icon"><i className="fas fa-phone" style={{ color: '#4FC3F7' }}></i></div>

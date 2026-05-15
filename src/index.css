@@ -1414,6 +1414,63 @@ textarea {
   transform: translateX(4px);
 }
 
+/* Clickable location card */
+.contact-location-card {
+  border: 2px solid rgba(255, 107, 157, 0.25);
+  background: linear-gradient(135deg, #fff0f6 0%, #f5f3ff 100%) !important;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-location-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,107,157,0.06), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+.contact-location-card:hover {
+  background: linear-gradient(135deg, #ffe0ec 0%, #ede9ff 100%) !important;
+  border-color: rgba(255, 107, 157, 0.6);
+  transform: translateX(6px);
+  box-shadow: 0 4px 20px rgba(255, 107, 157, 0.18);
+}
+
+/* Pulsing pin */
+.contact-pin-icon {
+  animation: locBounce 1.8s ease-in-out infinite;
+  background: #fff0f6 !important;
+}
+
+/* Get Directions CTA */
+.location-directions-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #FF6B9D;
+  background: rgba(255, 107, 157, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 107, 157, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.location-arrow-bounce {
+  animation: arrowBounce 0.8s ease-in-out infinite alternate;
+  font-size: 0.7rem;
+}
+
+@keyframes arrowBounce {
+  from { transform: translateX(0); }
+  to   { transform: translateX(5px); }
+}
+
 .contact-icon {
   width: 48px;
   height: 48px;
