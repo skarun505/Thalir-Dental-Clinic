@@ -16,6 +16,7 @@ import StickyBar from './components/StickyBar';
 import ExitPopup from './components/ExitPopup';
 import Footer from './components/Footer';
 import Blog from './components/Blog';
+import SEO from './components/SEO';
 
 function App() {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -45,6 +46,7 @@ function App() {
 
   return (
     <>
+      <SEO />
       <Navbar onBookClick={openBooking} />
       <main>
         <Hero onBookClick={openBooking} />

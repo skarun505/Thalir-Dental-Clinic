@@ -251,6 +251,62 @@ function MediaLibrary({ onBack }) {
     );
 }
 
+// ─── Smile of the Month Form ──────────────────────────────────────────
+function SmileOfMonthForm({ onBack }) {
+    const [form, setForm] = useState(() => {
+        return JSON.parse(localStorage.getItem('thalir_smile_of_month') || 'null') || {
+            imageUrl: '',
+            title: '',
+            description: ''
+        };
+    });
+    const [toast, setToast] = useState('');
+
+    const handleSave = (e) => {
+        e.preventDefault();
+        localStorage.setItem('thalir_smile_of_month', JSON.stringify(form));
+        setToast('✅ Smile of the Month updated successfully!');
+        setTimeout(() => setToast(''), 3000);
+    };
+
+    return (
+        <div className="adm-section">
+            <div className="adm-section-header">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <button className="adm-btn adm-btn-ghost" onClick={onBack}>
+                        <i className="fas fa-arrow-left"></i>
+                    </button>
+                    <h2>Smile of the Month</h2>
+                </div>
+            </div>
+
+            <div className="adm-form-wrap">
+                <form onSubmit={handleSave}>
+                    <div className="adm-form-group">
+                        <label className="adm-label">Image URL</label>
+                        <input className="adm-input" type="url" value={form.imageUrl} onChange={e => setForm({ ...form, imageUrl: e.target.value })} placeholder="https://..." required />
+                        <p className="adm-hint">You can copy a URL from the Media Library.</p>
+                    </div>
+                    <div className="adm-form-group">
+                        <label className="adm-label">Title</label>
+                        <input className="adm-input" type="text" value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} placeholder="e.g. Little Aarav - May 2026" required />
+                    </div>
+                    <div className="adm-form-group">
+                        <label className="adm-label">Description</label>
+                        <textarea className="adm-input" rows={4} value={form.description} onChange={e => setForm({ ...form, description: e.target.value })} placeholder="e.g. Aarav was super brave..." required></textarea>
+                    </div>
+                    
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px', marginTop: '24px' }}>
+                        <button type="button" className="adm-btn adm-btn-ghost" onClick={onBack}>Cancel</button>
+                        <button type="submit" className="adm-btn adm-btn-primary"><i className="fas fa-save"></i> Save Changes</button>
+                    </div>
+                </form>
+            </div>
+            {toast && <div className="adm-toast">{toast}</div>}
+        </div>
+    );
+}
+
 // ─── Dashboard (post list) ───────────────────────────────────────────
 function Dashboard({ onLogout }) {
     const [posts, setPosts] = useState(getPosts());
@@ -301,6 +357,9 @@ function Dashboard({ onLogout }) {
     if (view === 'media') {
         return <MediaLibrary onBack={() => setView('list')} />;
     }
+    if (view === 'smile') {
+        return <SmileOfMonthForm onBack={() => setView('list')} />;
+    }
 
     return (
         <div className="adm-dashboard">
@@ -345,6 +404,9 @@ function Dashboard({ onLogout }) {
                     <div className="adm-section-header">
                         <h2>All Blog Posts</h2>
                         <div style={{ display: 'flex', gap: '12px' }}>
+                            <button className="adm-btn adm-btn-ghost" onClick={() => setView('smile')}>
+                                <i className="fas fa-trophy" style={{ color: '#FFD93D' }}></i> Smile of the Month
+                            </button>
                             <button className="adm-btn adm-btn-ghost" onClick={() => setView('media')}>
                                 <i className="fas fa-images"></i> Media Library
                             </button>

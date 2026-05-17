@@ -23,13 +23,13 @@ export default function ClinicScroll() {
         <div className="infinity-scroll-track">
           {images.map((image, index) => (
             <div className="scroll-image-card" key={`img1-${index}`}>
-              <img src={img(`/images/no-cavity/${image}`)} alt={`Clinic patient ${index + 1}`} loading="lazy" />
+              <img src={img(`/images-optimized/no-cavity/${image}`)} alt={`Clinic patient ${index + 1}`} loading="lazy" />
             </div>
           ))}
           {/* Duplicate for seamless infinite scrolling */}
           {images.map((image, index) => (
             <div className="scroll-image-card" key={`img2-${index}`}>
-              <img src={img(`/images/no-cavity/${image}`)} alt={`Clinic patient ${index + 1}`} loading="lazy" />
+              <img src={img(`/images-optimized/no-cavity/${image}`)} alt={`Clinic patient ${index + 1}`} loading="lazy" />
             </div>
           ))}
         </div>

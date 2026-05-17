@@ -1,19 +1,19 @@
 import { img } from '../lib/getImagePath';
 
 const reviewImages = [
-    img('/images/IMG_6464.jpg'),
-    img('/images/IMG_6465.jpg'),
-    img('/images/IMG_6466.jpg'),
-    img('/images/IMG_6467.jpg'),
-    img('/images/IMG_6468.jpg'),
-    img('/images/IMG_6469.jpg'),
-    img('/images/IMG_6470.jpg'),
-    img('/images/IMG_6471.jpg'),
-    img('/images/IMG_6472.jpg'),
-    img('/images/IMG_6473.jpg'),
-    img('/images/IMG_6474.jpg'),
-    img('/images/IMG_6475.jpg'),
-    img('/images/IMG_6476.jpg'),
+    img('/images-optimized/IMG_6464.webp'),
+    img('/images-optimized/IMG_6465.webp'),
+    img('/images-optimized/IMG_6466.webp'),
+    img('/images-optimized/IMG_6467.webp'),
+    img('/images-optimized/IMG_6468.webp'),
+    img('/images-optimized/IMG_6469.webp'),
+    img('/images-optimized/IMG_6470.webp'),
+    img('/images-optimized/IMG_6471.webp'),
+    img('/images-optimized/IMG_6472.webp'),
+    img('/images-optimized/IMG_6473.webp'),
+    img('/images-optimized/IMG_6474.webp'),
+    img('/images-optimized/IMG_6475.webp'),
+    img('/images-optimized/IMG_6476.webp'),
 ];
 
 export default function Testimonials() {

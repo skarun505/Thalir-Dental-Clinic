@@ -2086,9 +2086,9 @@ select.form-input {
     gap: var(--space-lg);
   }
 
-  .why-card:last-child {
+  /* .why-card:last-child {
     grid-column: 1 / -1;
-  }
+  } removed for 6 item grid */
 
   .doctors-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2129,7 +2129,7 @@ select.form-input {
   }
 
   .ncc-steps-card {
-    grid-column: 1 / -1;
+    /* grid-column: 1 / -1; removed */
   }
 
   .ncc-benefits-grid {
@@ -2247,7 +2247,7 @@ select.form-input {
 }
 
 .ncc-steps-card {
-  grid-column: 1 / -1;
+  /* grid-column: 1 / -1; removed to allow side-by-side layout */
 }
 
 .ncc-info-card {
@@ -2418,10 +2418,6 @@ select.form-input {
 @media (min-width: 640px) {
   .ncc-slide img {
     height: 350px;
-  }
-
-  .ncc-benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2698,7 +2694,7 @@ select.form-input {
   font-size: 0.92rem;
   color: rgba(255, 255, 255, 0.85);
   max-width: 360px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .specialties-cta .btn-whatsapp {

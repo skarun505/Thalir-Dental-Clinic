@@ -58,10 +58,28 @@ export default function NoCavityClub() {
                         </p>
                     </div>
 
+                    {/* Benefits */}
+                    <div className="ncc-info-card scroll-animate">
+                        <div className="ncc-info-icon" style={{ background: '#FFF0F5' }}>
+                            <i className="fas fa-gift" style={{ color: '#FF6B9D' }}></i>
+                        </div>
+                        <h3>Club Member Benefits</h3>
+                        <div className="ncc-benefits-grid">
+                            {benefits.map((benefit, idx) => (
+                                <div className="ncc-benefit-item" key={idx}>
+                                    <div className="ncc-benefit-icon">
+                                        <i className={benefit.icon}></i>
+                                    </div>
+                                    <span>{benefit.text}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
                     {/* Steps */}
                     <div className="ncc-info-card ncc-steps-card scroll-animate">
                         <div className="ncc-info-icon" style={{ background: '#F3E5F5' }}>
-                            <i className="fas fa-list-ol" style={{ color: '#BA68C8' }}></i>
+                            <i className="fas fa-shoe-prints" style={{ color: '#BA68C8' }}></i>
                         </div>
                         <h3>3 Simple Steps to Join</h3>
                         <div className="ncc-steps">
@@ -87,21 +105,6 @@ export default function NoCavityClub() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                {/* Benefits */}
-                <div className="ncc-benefits scroll-animate">
-                    <h3><i className="fas fa-gift"></i> Club Member Benefits</h3>
-                    <div className="ncc-benefits-grid">
-                        {benefits.map((benefit, idx) => (
-                            <div className="ncc-benefit-item" key={idx}>
-                                <div className="ncc-benefit-icon">
-                                    <i className={benefit.icon}></i>
-                                </div>
-                                <span>{benefit.text}</span>
-                            </div>
-                        ))}
                     </div>
                 </div>
 

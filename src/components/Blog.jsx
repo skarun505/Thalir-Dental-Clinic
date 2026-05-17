@@ -1,22 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import BlogAdmin from './BlogAdmin';
 import { colorMap, samplePosts, getCustomPosts } from '../lib/blogData';
 
 export default function Blog() {
-    const [adminOpen, setAdminOpen] = useState(false);
     const [customPosts, setCustomPosts] = useState(() => getCustomPosts());
-
-    const handleNewPost = () => {
-        setCustomPosts(getCustomPosts());
-    };
-
-    const handleDelete = (id) => {
-        const saved = JSON.parse(localStorage.getItem('thalir_blog_posts') || '[]');
-        const updated = saved.filter((p) => p.id !== id);
-        localStorage.setItem('thalir_blog_posts', JSON.stringify(updated));
-        setCustomPosts(getCustomPosts());
-    };
 
     // Show custom posts first, then sample posts as examples
     const allPosts = [...customPosts, ...samplePosts];
@@ -37,13 +24,6 @@ export default function Blog() {
                         Helpful articles written by our specialists to keep your child's smile healthy and bright
                     </p>
 
-                    {/* Write Post Button — always visible */}
-                    <button
-                        className="btn btn-primary blog-write-btn"
-                        onClick={() => setAdminOpen(true)}
-                    >
-                        <i className="fas fa-pen-nib"></i> Write a Blog Post
-                    </button>
                 </div>
 
                 {/* Blog Posts Grid */}
@@ -89,16 +69,7 @@ export default function Blog() {
                                 </div>
                             </div>
 
-                            {/* Delete button for custom posts */}
-                            {!String(post.id).startsWith('sample') && (
-                                <button
-                                    className="blog-delete-btn"
-                                    title="Delete this post"
-                                    onClick={() => handleDelete(post.id)}
-                                >
-                                    <i className="fas fa-trash-alt"></i>
-                                </button>
-                            )}
+
                         </article>
                     ))}
                 </div>
@@ -125,13 +96,6 @@ export default function Blog() {
                 </div>
             </div>
 
-            {/* Admin Panel Modal */}
-            {adminOpen && (
-                <BlogAdmin
-                    onSave={handleNewPost}
-                    onClose={() => setAdminOpen(false)}
-                />
-            )}
         </section>
     );
 }

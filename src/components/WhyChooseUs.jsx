@@ -34,6 +34,13 @@ const reasons = [
         title: 'Emergency Support',
         description: 'Available for dental emergencies. Quick response when your child needs immediate care.',
     },
+    {
+        icon: 'fas fa-shield-halved',
+        bg: '#E0F7FA',
+        iconColor: '#26C6DA',
+        title: 'Focus on Prevention',
+        description: 'We teach healthy habits and provide treatments that prevent cavities before they even start.',
+    },
 ];
 
 export default function WhyChooseUs() {

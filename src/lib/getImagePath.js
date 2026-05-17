@@ -3,7 +3,7 @@
  * Vite's BASE_URL is '/Thalir-Dental-Clinic/' in production and '/' in dev,
  * so we strip any leading slash from `path` and join it with the base.
  *
- * Usage:  src={img('/images/thalir-logo.png')}
+ * Usage:  src={img('/images-optimized/thalir-logo.webp')}
  */
 export function img(path) {
     const base = import.meta.env.BASE_URL; // e.g. '/Thalir-Dental-Clinic/'

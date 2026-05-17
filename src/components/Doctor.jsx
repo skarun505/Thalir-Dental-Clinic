@@ -18,7 +18,7 @@ export default function Doctor() {
                     <div className="doctor-profile-card">
                         <div className="doctor-profile-img-wrap">
                             <img
-                                src={img('/images/dr-midhunraj.jpeg')}
+                                src={img('/images-optimized/dr-midhunraj.webp')}
                                 alt="Dr. R. Midhunraj, M.D.S - Pediatric Dentist"
                                 loading="lazy"
                                 style={{ objectPosition: 'center top' }}
@@ -47,7 +47,7 @@ export default function Doctor() {
                     <div className="doctor-profile-card">
                         <div className="doctor-profile-img-wrap">
                             <img
-                                src={img('/images/dr-pavithra.jpeg')}
+                                src={img('/images-optimized/dr-pavithra.webp')}
                                 alt="Dr. K. Pavithra, M.D.S - Pediatric Dentist"
                                 loading="lazy"
                                 style={{ objectPosition: 'center 5%' }}

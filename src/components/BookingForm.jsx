@@ -2,16 +2,14 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 // ─── EmailJS Config ─────────────────────────────────────────────
-// 1. Go to https://emailjs.com → sign up free
-// 2. Add Email Service (Gmail) → copy Service ID
-// 3. Create Email Template → copy Template ID
-// 4. Go to Account → copy Public Key
-const EMAILJS_SERVICE_ID  = 'service_7rhtryp';
-const EMAILJS_TEMPLATE_ID = 'template_vb7c7dk';
-const EMAILJS_PUBLIC_KEY  = 'kSKn6zF1crgasUrGl';
+// Credentials are stored securely in .env (never commit .env to git)
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 // ─── Clinic WhatsApp number ─────────────────────────────────────
 const CLINIC_WHATSAPP = '919043060968';
+
 
 const serviceOptions = [
     'Tooth Cleaning',
@@ -76,7 +74,7 @@ export default function BookingForm({ isOpen, onClose }) {
         setLoading(true);
         try {
             // ── 1. Send Email via EmailJS ──────────────────────────
-            if (EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID') {
+            if (EMAILJS_SERVICE_ID) {
                 await emailjs.send(
                     EMAILJS_SERVICE_ID,
                     EMAILJS_TEMPLATE_ID,

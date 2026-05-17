@@ -4,7 +4,7 @@ const specialties = [
     {
         icon: 'fas fa-heart',
         emoji: '🤱',
-        image: 'images/specialties/tongue-tie.webp',
+        image: '/images-optimized/specialties/tongue-tie.webp',
         title: 'Tongue & Lip Tie Specialty',
         tagline: 'Restoring the Joy of Breastfeeding',
         description: 'Precision laser care for tongue and lip ties, restoring the joy of breastfeeding, speech clarity, dental health and facial development.',
@@ -16,7 +16,7 @@ const specialties = [
     {
         icon: 'fas fa-hand-holding-heart',
         emoji: '💜',
-        image: 'images/specialties/special-needs.jpeg',
+        image: '/images-optimized/specialties/special-needs.webp',
         title: 'Special Health Care Needs Dentistry',
         tagline: 'Care at Your Child\'s Pace',
         description: "Sensory-friendly dental care tailored to your child's own rhythm and unique needs.",
@@ -28,7 +28,7 @@ const specialties = [
     {
         icon: 'fas fa-shield-alt',
         emoji: '🛡️',
-        image: 'images/specialties/preventive-care.png',
+        image: '/images-optimized/specialties/preventive-care.webp',
         title: 'Preventive Oral Care',
         tagline: 'Strong Teeth from Day One',
         description: 'Non invasive oral care for early prevention of decay and mechanical barrier for teeth.',
@@ -40,7 +40,7 @@ const specialties = [
     {
         icon: 'fas fa-lungs',
         emoji: '🌬️',
-        image: 'images/specialties/airway-dentistry.jpeg',
+        image: '/images-optimized/specialties/airway-dentistry.webp',
         title: 'Airway Dentistry',
         tagline: 'Breathe, Sleep & Grow Fully',
         description: 'We look beyond teeth to help your child breathe, sleep, and grow with confidence.',
@@ -52,7 +52,7 @@ const specialties = [
     {
         icon: 'fas fa-teeth',
         emoji: '😁',
-        image: 'images/specialties/early-orthodontic.webp',
+        image: '/images-optimized/specialties/early-orthodontic.webp',
         title: 'Early Orthodontic Care',
         tagline: 'Shaping Confident Smiles Early',
         description: 'Early habit correction creates the space for healthy adult teeth and great smiles.',
@@ -64,7 +64,7 @@ const specialties = [
     {
         icon: 'fas fa-smile-beam',
         emoji: '😊',
-        image: 'images/specialties/pain-free.png',
+        image: '/images-optimized/specialties/pain-free.webp',
         imagePosition: 'bottom',
         imageFit: 'cover',
         title: 'Pain Free Dentistry',
@@ -78,7 +78,7 @@ const specialties = [
     {
         icon: 'fas fa-baby',
         emoji: '🤰',
-        image: 'images/specialties/pregnancy-care.jpeg',
+        image: '/images-optimized/specialties/pregnancy-care.webp',
         imagePosition: 'bottom',
         imageFit: 'cover',
         title: 'Pregnancy Oral Care',
@@ -92,7 +92,7 @@ const specialties = [
     {
         icon: 'fas fa-futbol',
         emoji: '⚽',
-        image: 'images/specialties/sports-dentistry.jpeg',
+        image: '/images-optimized/specialties/sports-dentistry.webp',
         title: 'Sports Dentistry',
         tagline: 'Compete with Total Confidence',
         description: 'Specialized mouthguards and trauma care help your child compete with confidence.',

@@ -7,7 +7,7 @@ export default function Hero() {
             {/* ── Centered Brand Row ── */}
             <div className="hero-brand-row">
                 <div className="hero-brand-logo">
-                    <img src={img('/images/thalir-logo.png')} alt="Thalir Dental Clinic Logo" />
+                    <img src={img('/images-optimized/thalir-logo.webp')} alt="Thalir Dental Clinic Logo" />
                 </div>
                 <div className="hero-brand-text">
                     <span className="hero-brand-name">Thalir Dental Clinic</span>
@@ -24,7 +24,7 @@ export default function Hero() {
                     </div>
 
                     <div className="hero-mascot">
-                        <img src={img('/images/thalir-logo.png')} alt="Thalir Dental Logo" />
+                        <img src={img('/images-optimized/thalir-logo.webp')} alt="Thalir Dental Logo" />
                     </div>
 
                     <h1>
@@ -65,7 +65,7 @@ export default function Hero() {
                 {/* Right: Doctors Image */}
                 <div className="hero-doctors-img">
                     <img
-                        src={img('/images/doctors-both.png')}
+                        src={img('/images-optimized/doctors-both.webp')}
                         alt="Dr. Midhunraj & Dr. Pavithra — Thalir Dental"
                         loading="eager"
                     />

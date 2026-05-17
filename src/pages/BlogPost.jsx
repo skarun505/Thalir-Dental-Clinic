@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { getPostById } from '../lib/blogData';
 import { useEffect } from 'react';
+import SEO from '../components/SEO';
 
 export default function BlogPost() {
     const { id } = useParams();
@@ -31,6 +32,12 @@ export default function BlogPost() {
 
     return (
         <div className="blog-post-page" style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', paddingBottom: '60px' }}>
+            <SEO 
+                title={post.title} 
+                description={post.excerpt.replace(/<[^>]+>/g, '').substring(0, 160)} 
+                image={post.imageUrl} 
+                url={`/blog/${id}`} 
+            />
             {/* Minimal Navbar */}
             <div style={{ backgroundColor: 'white', padding: '16px 20px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', position: 'sticky', top: 0, zIndex: 100 }}>
                 <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

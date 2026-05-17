@@ -2,32 +2,32 @@ import { img } from '../lib/getImagePath';
 
 const galleryItems = [
     {
-        image: img('/images/IMG_4547.jpeg'),
+        image: img('/images-optimized/IMG_4547.webp'),
         icon: 'fas fa-hospital',
         label: 'Our Welcoming Clinic',
     },
     {
-        image: img('/images/IMG_4548.jpeg'),
+        image: img('/images-optimized/IMG_4548.webp'),
         icon: 'fas fa-tooth',
         label: 'Kid-Friendly Treatment Room',
     },
     {
-        image: img('/images/IMG_4551.jpeg'),
+        image: img('/images-optimized/IMG_4551.webp'),
         icon: 'fas fa-couch',
         label: 'Comfortable Care Space',
     },
     {
-        image: img('/images/IMG_4552.jpeg'),
+        image: img('/images-optimized/IMG_4552.webp'),
         icon: 'fas fa-stethoscope',
         label: 'Advanced Dental Equipment',
     },
     {
-        image: img('/images/IMG_4554.jpeg'),
+        image: img('/images-optimized/IMG_4554.webp'),
         icon: 'fas fa-gamepad',
         label: 'Fun Play Area',
     },
     {
-        image: img('/images/IMG_7365.jpg'),
+        image: img('/images-optimized/IMG_7365.webp'),
         icon: 'fas fa-face-smile',
         label: 'Happy Little Patients',
         objectPosition: '70% center',
@@ -52,7 +52,7 @@ export default function Gallery() {
                             className="clinic-video"
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         >
-                            <source src={img('/images/dental-clinic-overview.mp4')} type="video/mp4" />
+                            <source src={img('/images-optimized/dental-clinic-overview.mp4')} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                         <div className="gallery-item-label"><i className="fas fa-play-circle"></i> Video Tour</div>
