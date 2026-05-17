@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import RichEditor from './RichEditor';
 
 const ADMIN_PASSWORD = 'thalir@blog'; // Change this to your preferred password
 
@@ -12,6 +13,7 @@ export default function BlogAdmin({ onSave, onClose }) {
         author: 'Dr. R. Midhunraj',
         excerpt: '',
         emoji: '🦷',
+        imageUrl: '',
     });
     const [saved, setSaved] = useState(false);
 
@@ -40,6 +42,9 @@ export default function BlogAdmin({ onSave, onClose }) {
         e.preventDefault();
         if (!form.title.trim() || !form.excerpt.trim()) return;
 
+        const strippedHtml = form.excerpt.replace(/<[^>]+>/g, '');
+        const words = strippedHtml.trim().split(/\s+/).filter(Boolean).length;
+
         const newPost = {
             id: Date.now(),
             title: form.title.trim(),
@@ -48,9 +53,10 @@ export default function BlogAdmin({ onSave, onClose }) {
             author: form.author,
             emoji: form.emoji,
             date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }),
-            readTime: `${Math.max(2, Math.ceil(form.excerpt.split(' ').length / 150))} min read`,
+            readTime: `${Math.max(2, Math.ceil(words / 150))} min read`,
             color: '#6C63FF',
             bg: '#EDE9FF',
+            imageUrl: form.imageUrl.trim() || null,
         };
 
         // Load existing saved posts
@@ -150,15 +156,21 @@ export default function BlogAdmin({ onSave, onClose }) {
                             </div>
 
                             <div className="form-group">
-                                <label><i className="fas fa-align-left"></i> Blog Content <span className="required">*</span></label>
-                                <textarea
+                                <label><i className="fas fa-image"></i> Cover Image URL (Optional)</label>
+                                <input
+                                    type="url"
                                     className="form-input"
-                                    placeholder="Write your full blog post content here..."
-                                    rows={7}
-                                    value={form.excerpt}
-                                    onChange={(e) => setForm({ ...form, excerpt: e.target.value })}
-                                    required
-                                    style={{ resize: 'vertical', minHeight: '140px' }}
+                                    placeholder="https://images.unsplash.com/..."
+                                    value={form.imageUrl}
+                                    onChange={(e) => setForm({ ...form, imageUrl: e.target.value })}
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label><i className="fas fa-align-left"></i> Blog Content <span className="required">*</span></label>
+                                <RichEditor 
+                                    content={form.excerpt}
+                                    onChange={(html) => setForm({ ...form, excerpt: html })}
                                 />
                             </div>
 

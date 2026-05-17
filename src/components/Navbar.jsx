@@ -22,7 +22,7 @@ export default function Navbar({ onBookClick }) {
                 </a>
 
                 <div className="nav-links">
-                    <a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services'); }}>Services</a>
+                    <a href="#specialties" onClick={(e) => { e.preventDefault(); scrollTo('specialties'); }}>Services</a>
                     <a href="#why-us" onClick={(e) => { e.preventDefault(); scrollTo('why-us'); }}>Why Us</a>
                     <a href="#doctor" onClick={(e) => { e.preventDefault(); scrollTo('doctor'); }}>Doctor</a>
                     <a href="#gallery" onClick={(e) => { e.preventDefault(); scrollTo('gallery'); }}>Gallery</a>

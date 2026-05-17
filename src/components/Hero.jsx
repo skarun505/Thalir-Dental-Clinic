@@ -1,6 +1,6 @@
 import { img } from '../lib/getImagePath';
 
-export default function Hero({ onBookClick }) {
+export default function Hero() {
     return (
         <section className="hero" id="hero">
 

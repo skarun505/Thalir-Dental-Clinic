@@ -1,90 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import BlogAdmin from './BlogAdmin';
-
-const colorMap = [
-    { color: '#6C63FF', bg: '#EDE9FF' },
-    { color: '#FF6B9D', bg: '#FFE0EC' },
-    { color: '#FF8A65', bg: '#FFF3E0' },
-    { color: '#6BCB77', bg: '#E8F5E9' },
-    { color: '#4FC3F7', bg: '#E0F4FF' },
-    { color: '#BA68C8', bg: '#F3E5F5' },
-];
-
-const samplePosts = [
-    {
-        id: 'sample-1',
-        title: 'When Should My Child Have Their First Dental Visit?',
-        excerpt: 'Many parents wonder when to schedule their child\'s first dental appointment. The answer might surprise you — it\'s earlier than you think! Learn why early visits set the foundation for a lifetime of healthy smiles.',
-        author: 'Dr. R. Midhunraj',
-        date: 'May 10, 2026',
-        category: 'Preventive Care',
-        readTime: '3 min read',
-        emoji: '🦷',
-        color: '#6C63FF',
-        bg: '#EDE9FF',
-    },
-    {
-        id: 'sample-2',
-        title: 'How to Make Brushing Fun for Your Kids',
-        excerpt: 'Getting your child to brush their teeth can feel like a battle every night. Discover playful tips, fun routines, and the right tools that turn brushing into the highlight of their bedtime routine.',
-        author: 'Dr. K. Pavithra',
-        date: 'April 28, 2026',
-        category: 'Oral Hygiene Tips',
-        readTime: '4 min read',
-        emoji: '✨',
-        color: '#FF6B9D',
-        bg: '#FFE0EC',
-    },
-    {
-        id: 'sample-3',
-        title: 'Understanding Tongue Tie in Newborns',
-        excerpt: 'Tongue tie (ankyloglossia) can affect breastfeeding, speech, and overall development. We explain the signs to look out for, how it\'s diagnosed, and what laser treatment involves.',
-        author: 'Dr. R. Midhunraj',
-        date: 'April 15, 2026',
-        category: 'Specialist Care',
-        readTime: '5 min read',
-        emoji: '❤️',
-        color: '#FF8A65',
-        bg: '#FFF3E0',
-    },
-];
+import { colorMap, samplePosts, getCustomPosts } from '../lib/blogData';
 
 export default function Blog() {
-    const [expanded, setExpanded] = useState(null);
     const [adminOpen, setAdminOpen] = useState(false);
-    const [customPosts, setCustomPosts] = useState([]);
+    const [customPosts, setCustomPosts] = useState(() => getCustomPosts());
 
-    // Load saved posts from localStorage on mount
-    useEffect(() => {
-        const saved = JSON.parse(localStorage.getItem('thalir_blog_posts') || '[]');
-        // Apply color cycling to saved posts
-        const withColors = saved.map((post, idx) => ({
-            ...post,
-            color: colorMap[idx % colorMap.length].color,
-            bg: colorMap[idx % colorMap.length].bg,
-        }));
-        setCustomPosts(withColors);
-    }, []);
-
-    const handleNewPost = (allPosts) => {
-        const withColors = allPosts.map((post, idx) => ({
-            ...post,
-            color: colorMap[idx % colorMap.length].color,
-            bg: colorMap[idx % colorMap.length].bg,
-        }));
-        setCustomPosts(withColors);
+    const handleNewPost = () => {
+        setCustomPosts(getCustomPosts());
     };
 
     const handleDelete = (id) => {
         const saved = JSON.parse(localStorage.getItem('thalir_blog_posts') || '[]');
         const updated = saved.filter((p) => p.id !== id);
         localStorage.setItem('thalir_blog_posts', JSON.stringify(updated));
-        const withColors = updated.map((post, idx) => ({
-            ...post,
-            color: colorMap[idx % colorMap.length].color,
-            bg: colorMap[idx % colorMap.length].bg,
-        }));
-        setCustomPosts(withColors);
+        setCustomPosts(getCustomPosts());
     };
 
     // Show custom posts first, then sample posts as examples
@@ -135,21 +66,15 @@ export default function Blog() {
                             <div className="blog-card-body">
                                 <h3 className="blog-title">{post.title}</h3>
                                 <p className="blog-excerpt">
-                                    {expanded === post.id
-                                        ? post.excerpt
-                                        : post.excerpt.slice(0, 120) + '...'}
+                                    {post.excerpt.replace(/<[^>]+>/g, '').slice(0, 120) + '...'}
                                 </p>
-                                <button
+                                <Link
+                                    to={`/blog/${post.id}`}
                                     className="blog-read-more"
-                                    style={{ color: post.color }}
-                                    onClick={() => setExpanded(expanded === post.id ? null : post.id)}
+                                    style={{ color: post.color, textDecoration: 'none', display: 'inline-block', marginTop: '10px' }}
                                 >
-                                    {expanded === post.id ? (
-                                        <><i className="fas fa-chevron-up"></i> Show Less</>
-                                    ) : (
-                                        <><i className="fas fa-chevron-down"></i> Read More</>
-                                    )}
-                                </button>
+                                    <i className="fas fa-arrow-right"></i> Read Full Post
+                                </Link>
                             </div>
 
                             {/* Card Footer */}

@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import RichEditor from '../components/RichEditor';
+import { getMediaLibrary, saveToMediaLibrary, removeFromMediaLibrary } from '../lib/mediaData';
 
 const ADMIN_PASSWORD = 'thalir@blog';
 
@@ -70,13 +72,14 @@ function LoginScreen({ onLogin }) {
 function PostForm({ existing, onSave, onCancel }) {
     const [form, setForm] = useState(existing || {
         title: '', category: categories[0], author: authors[0],
-        excerpt: '', emoji: '🦷',
+        excerpt: '', emoji: '🦷', imageUrl: '',
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!form.title.trim() || !form.excerpt.trim()) return;
-        const words = form.excerpt.trim().split(/\s+/).length;
+        const strippedHtml = form.excerpt.replace(/<[^>]+>/g, '');
+        const words = strippedHtml.trim().split(/\s+/).filter(Boolean).length;
         const post = {
             ...form,
             id: existing?.id || Date.now(),
@@ -84,6 +87,7 @@ function PostForm({ existing, onSave, onCancel }) {
             readTime: `${Math.max(2, Math.ceil(words / 150))} min read`,
             color: '#6C63FF',
             bg: '#EDE9FF',
+            imageUrl: form.imageUrl?.trim() || null,
         };
         onSave(post);
     };
@@ -139,15 +143,24 @@ function PostForm({ existing, onSave, onCancel }) {
                     </div>
                 </div>
 
-                {/* Content */}
+                {/* Cover Image */}
                 <div className="adm-field">
+                    <label>Cover Image URL</label>
+                    <input className="adm-input" type="url"
+                        placeholder="https://images.unsplash.com/..."
+                        value={form.imageUrl || ''}
+                        onChange={(e) => setForm({ ...form, imageUrl: e.target.value })}
+                    />
+                </div>
+
+                {/* Content */}
+                <div className="adm-field" style={{ gridColumn: '1 / -1' }}>
                     <label>Blog Content <span>*</span></label>
-                    <textarea className="adm-input adm-textarea"
-                        placeholder="Write your full blog post here. Share tips, insights, case studies..."
-                        value={form.excerpt}
-                        onChange={(e) => setForm({ ...form, excerpt: e.target.value })}
-                        required />
-                    <small>{form.excerpt.trim().split(/\s+/).filter(Boolean).length} words</small>
+                    <RichEditor 
+                        content={form.excerpt} 
+                        onChange={(html) => setForm({ ...form, excerpt: html })} 
+                    />
+                    <small>Write your full post using the rich text editor above.</small>
                 </div>
 
                 <div className="adm-form-actions">
@@ -164,10 +177,84 @@ function PostForm({ existing, onSave, onCancel }) {
     );
 }
 
+// ─── Media Library Screen ────────────────────────────────────────────
+function MediaLibrary({ onBack }) {
+    const [media, setMedia] = useState(getMediaLibrary());
+    const [url, setUrl] = useState('');
+    const [name, setName] = useState('');
+
+    const handleAdd = (e) => {
+        e.preventDefault();
+        if (!url.trim()) return;
+        const newItem = {
+            id: Date.now().toString(),
+            url: url.trim(),
+            name: name.trim() || 'Untitled Image'
+        };
+        const updated = saveToMediaLibrary(newItem);
+        setMedia(updated);
+        setUrl('');
+        setName('');
+    };
+
+    const handleDelete = (id) => {
+        const updated = removeFromMediaLibrary(id);
+        setMedia(updated);
+    };
+
+    return (
+        <div className="adm-section">
+            <div className="adm-section-header">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <button className="adm-btn adm-btn-ghost" onClick={onBack}>
+                        <i className="fas fa-arrow-left"></i>
+                    </button>
+                    <h2>Media Library</h2>
+                </div>
+            </div>
+
+            <div className="adm-form-wrap" style={{ marginBottom: '32px' }}>
+                <h3>Add External Image</h3>
+                <form onSubmit={handleAdd} style={{ display: 'flex', gap: '16px', marginTop: '16px' }}>
+                    <input className="adm-input" type="text" placeholder="Image Name (e.g. Tooth brush)" value={name} onChange={e => setName(e.target.value)} style={{ flex: 1 }} />
+                    <input className="adm-input" type="url" placeholder="Image URL (https://...)" value={url} onChange={e => setUrl(e.target.value)} required style={{ flex: 2 }} />
+                    <button type="submit" className="adm-btn adm-btn-primary"><i className="fas fa-plus"></i> Add</button>
+                </form>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px' }}>
+                {media.length === 0 ? (
+                    <p style={{ color: '#718096', gridColumn: '1 / -1' }}>No images added yet. Add an image URL above to get started.</p>
+                ) : (
+                    media.map(m => (
+                        <div key={m.id} style={{ border: '1px solid #E2E8F0', borderRadius: '12px', overflow: 'hidden', position: 'relative' }}>
+                            <div style={{ height: '150px', background: '#F7FAFC' }}>
+                                <img src={m.url} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            </div>
+                            <div style={{ padding: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <span style={{ fontWeight: 500, fontSize: '0.9rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{m.name}</span>
+                                <button className="adm-icon-btn delete" onClick={() => handleDelete(m.id)} title="Delete Image">
+                                    <i className="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                            <button 
+                                onClick={() => navigator.clipboard.writeText(m.url).then(() => alert('Image URL copied to clipboard!'))}
+                                style={{ position: 'absolute', top: '8px', right: '8px', background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '6px', padding: '6px 10px', cursor: 'pointer', fontSize: '0.8rem', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+                            >
+                                <i className="fas fa-copy"></i> Copy Link
+                            </button>
+                        </div>
+                    ))
+                )}
+            </div>
+        </div>
+    );
+}
+
 // ─── Dashboard (post list) ───────────────────────────────────────────
 function Dashboard({ onLogout }) {
     const [posts, setPosts] = useState(getPosts());
-    const [view, setView] = useState('list'); // 'list' | 'new' | 'edit'
+    const [view, setView] = useState('list'); // 'list' | 'new' | 'edit' | 'media'
     const [editing, setEditing] = useState(null);
     const [deleteId, setDeleteId] = useState(null);
     const [toast, setToast] = useState('');
@@ -210,6 +297,9 @@ function Dashboard({ onLogout }) {
     }
     if (view === 'edit' && editing) {
         return <PostForm existing={editing} onSave={handleSave} onCancel={() => { setView('list'); setEditing(null); }} />;
+    }
+    if (view === 'media') {
+        return <MediaLibrary onBack={() => setView('list')} />;
     }
 
     return (
@@ -254,9 +344,14 @@ function Dashboard({ onLogout }) {
                 <div className="adm-section">
                     <div className="adm-section-header">
                         <h2>All Blog Posts</h2>
-                        <button className="adm-btn adm-btn-primary" onClick={() => setView('new')}>
-                            <i className="fas fa-plus"></i> New Post
-                        </button>
+                        <div style={{ display: 'flex', gap: '12px' }}>
+                            <button className="adm-btn adm-btn-ghost" onClick={() => setView('media')}>
+                                <i className="fas fa-images"></i> Media Library
+                            </button>
+                            <button className="adm-btn adm-btn-primary" onClick={() => setView('new')}>
+                                <i className="fas fa-plus"></i> New Post
+                            </button>
+                        </div>
                     </div>
 
                     {posts.length === 0 ? (
@@ -283,7 +378,7 @@ function Dashboard({ onLogout }) {
                                                 <span><i className="fas fa-calendar-alt"></i> {post.date}</span>
                                                 <span><i className="fas fa-clock"></i> {post.readTime}</span>
                                             </div>
-                                            <p className="adm-post-preview">{post.excerpt.slice(0, 100)}…</p>
+                                            <p className="adm-post-preview">{post.excerpt.replace(/<[^>]+>/g, '').slice(0, 100)}…</p>
                                         </div>
                                         <div className="adm-post-actions">
                                             <button className="adm-icon-btn edit" onClick={() => handleEdit(post)} title="Edit">
