@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Use root for Vercel/Local and the repo name for GitHub Pages
-  base: process.env.VERCEL ? '/' : '/Thalir-Dental-Clinic/',
+  // Use '/' for custom domains (Hostinger, Vercel) and local dev
+  base: process.env.GH_PAGES ? '/Thalir-Dental-Clinic/' : '/',
 })

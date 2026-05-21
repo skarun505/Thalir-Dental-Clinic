@@ -63,7 +63,7 @@ export default function Contact() {
                             </a>
                         </div>
 
-                        <div className="contact-buttons" style={{ marginTop: '24px' }}>
+                        <div className="contact-buttons" style={{ marginTop: '24px', display: 'flex', gap: '16px', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
                             <a href="tel:+919043060968" className="btn btn-call">
                                 <i className="fas fa-phone"></i> Call Now
                             </a>

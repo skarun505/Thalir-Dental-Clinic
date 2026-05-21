@@ -40,9 +40,6 @@ export default function Footer() {
                 &copy; 2026 Thalir Dental Clinic. All rights reserved.<br />
                 Made with <i className="fas fa-heart" style={{ color: '#FF6B9D' }}></i> for little smiles.
             </p>
-            <p className="footer-copyright" style={{ marginTop: '8px', fontSize: '0.85rem' }}>
-                ✨ Magically designed & developed by <a href="https://subix.in" target="_blank" rel="noopener noreferrer" style={{ color: '#6C63FF', textDecoration: 'none', fontWeight: 'bold' }}>subix.in</a> 🚀
-            </p>
 
         </footer>
     );
