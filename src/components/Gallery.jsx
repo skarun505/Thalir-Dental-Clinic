@@ -3,37 +3,42 @@ import { img } from '../lib/getImagePath';
 const galleryItems = [
     {
         image: img('/images-optimized/IMG_4547.webp'),
+        mobileImage: img('/clinic-tour/Mobile%20View/1.svg'),
         icon: 'fas fa-hospital',
         label: 'Our Welcoming Clinic',
     },
     {
         image: img('/images-optimized/IMG_4548.webp'),
+        mobileImage: img('/clinic-tour/Mobile%20View/2.svg'),
         icon: 'fas fa-tooth',
         label: 'Kid-Friendly Treatment Room',
     },
     {
         image: img('/images-optimized/IMG_4551.webp'),
+        mobileImage: img('/clinic-tour/Mobile%20View/3.svg'),
         icon: 'fas fa-couch',
         label: 'Comfortable Care Space',
     },
     {
         image: img('/images-optimized/IMG_4552.webp'),
+        mobileImage: img('/clinic-tour/Mobile%20View/4.svg'),
         icon: 'fas fa-stethoscope',
         label: 'Advanced Dental Equipment',
     },
     {
         image: img('/images-optimized/IMG_4554.webp'),
+        mobileImage: img('/clinic-tour/Mobile%20View/5.svg'),
         icon: 'fas fa-gamepad',
         label: 'Fun Play Area',
     },
     {
         image: img('/images-optimized/IMG_7365.webp'),
+        mobileImage: img('/clinic-tour/Mobile%20View/6.svg'),
         icon: 'fas fa-face-smile',
         label: 'Happy Little Patients',
         objectPosition: '70% center',
     },
 ];
-
 
 export default function Gallery() {
     return (
@@ -60,7 +65,10 @@ export default function Gallery() {
 
                     {galleryItems.map((item, idx) => (
                         <div className="gallery-item" key={idx}>
-                            <img src={item.image} alt={item.label} loading="lazy" style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined} />
+                            <picture style={{ display: 'block', width: '100%', height: '100%' }}>
+                                <source media="(max-width: 767px)" srcSet={item.mobileImage} />
+                                <img src={item.image} alt={item.label} loading="lazy" style={item.objectPosition ? { objectPosition: item.objectPosition, width: '100%', height: '100%' } : { width: '100%', height: '100%' }} />
+                            </picture>
                             <div className="gallery-item-label"><i className={item.icon}></i> {item.label}</div>
                         </div>
                     ))}
@@ -75,14 +83,20 @@ export default function Gallery() {
                 <div className="hero-interior-scroll">
                     {galleryItems.map((item, idx) => (
                         <div className="hero-interior-item" key={idx}>
-                            <img src={item.image} alt={item.label} loading="lazy" style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined} />
+                            <picture style={{ display: 'block', width: '100%', height: '100%' }}>
+                                <source media="(max-width: 767px)" srcSet={item.mobileImage} />
+                                <img src={item.image} alt={item.label} loading="lazy" style={item.objectPosition ? { objectPosition: item.objectPosition, width: '100%', height: '100%' } : { width: '100%', height: '100%' }} />
+                            </picture>
                             <span className="hero-interior-caption">{item.label}</span>
                         </div>
                     ))}
                     {/* Duplicate for seamless loop */}
                     {galleryItems.map((item, idx) => (
                         <div className="hero-interior-item" key={`dup-${idx}`} aria-hidden="true">
-                            <img src={item.image} alt={item.label} loading="lazy" style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined} />
+                            <picture style={{ display: 'block', width: '100%', height: '100%' }}>
+                                <source media="(max-width: 767px)" srcSet={item.mobileImage} />
+                                <img src={item.image} alt={item.label} loading="lazy" style={item.objectPosition ? { objectPosition: item.objectPosition, width: '100%', height: '100%' } : { width: '100%', height: '100%' }} />
+                            </picture>
                             <span className="hero-interior-caption">{item.label}</span>
                         </div>
                     ))}

@@ -1,12 +1,64 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { colorMap, samplePosts, getCustomPosts } from '../lib/blogData';
+import { getBlogs } from '../lib/supabase';
 
 export default function Blog() {
-    const [customPosts, setCustomPosts] = useState(() => getCustomPosts());
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // Show custom posts first, then sample posts as examples
-    const allPosts = [...customPosts, ...samplePosts];
+    useEffect(() => {
+        let active = true;
+        getBlogs()
+            .then((data) => {
+                if (active) {
+                    setPosts(data);
+                    setLoading(false);
+                }
+            })
+            .catch((err) => {
+                console.error('Error fetching blogs:', err);
+                if (active) setLoading(false);
+            });
+        return () => { active = false; };
+    }, []);
+
+    if (loading) {
+        return (
+            <section className="section blog-section" id="blog">
+                <div className="container">
+                    <div className="blog-header">
+                        <span className="blog-badge">
+                            <i className="fas fa-pen-nib"></i> Thalir Health Blog
+                        </span>
+                        <h2 className="section-title">
+                            <i className="fas fa-book-open"></i> Expert Dental Tips &amp; Insights
+                        </h2>
+                        <p className="section-subtitle">
+                            Loading helpful articles written by our specialists...
+                        </p>
+                    </div>
+
+                    <div className="blog-grid">
+                        {[1, 2, 3].map((i) => (
+                            <div className="blog-card skeleton-card" key={i}>
+                                <div className="blog-card-top skeleton-shimmer" style={{ height: '160px', background: '#F3F4F6' }}></div>
+                                <div className="blog-card-body">
+                                    <div className="skeleton-line skeleton-shimmer" style={{ height: '24px', width: '80%', marginBottom: '12px', background: '#E5E7EB', borderRadius: '6px' }}></div>
+                                    <div className="skeleton-line skeleton-shimmer" style={{ height: '14px', width: '100%', marginBottom: '8px', background: '#E5E7EB', borderRadius: '4px' }}></div>
+                                    <div className="skeleton-line skeleton-shimmer" style={{ height: '14px', width: '90%', marginBottom: '20px', background: '#E5E7EB', borderRadius: '4px' }}></div>
+                                    <div className="skeleton-line skeleton-shimmer" style={{ height: '16px', width: '35%', background: '#E5E7EB', borderRadius: '4px' }}></div>
+                                </div>
+                                <div className="blog-card-footer" style={{ borderTop: '1px solid #F3F4F6', padding: '16px 20px', display: 'flex', justifyContent: 'space-between' }}>
+                                    <div className="skeleton-line skeleton-shimmer" style={{ height: '14px', width: '40%', background: '#E5E7EB', borderRadius: '4px' }}></div>
+                                    <div className="skeleton-line skeleton-shimmer" style={{ height: '14px', width: '30%', background: '#E5E7EB', borderRadius: '4px' }}></div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section className="section blog-section" id="blog">
@@ -28,7 +80,7 @@ export default function Blog() {
 
                 {/* Blog Posts Grid */}
                 <div className="blog-grid">
-                    {allPosts.map((post, idx) => (
+                    {posts.map((post, idx) => (
                         <article
                             className="blog-card scroll-animate"
                             key={post.id}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { insertAppointment } from '../lib/supabase';
 
 // ─── EmailJS Config ─────────────────────────────────────────────
 // Credentials are stored securely in .env (never commit .env to git)
@@ -73,7 +74,12 @@ export default function BookingForm({ isOpen, onClose }) {
 
         setLoading(true);
         try {
-            // ── 1. Send Email via EmailJS ──────────────────────────
+            // ── 1. Save to Supabase (non-blocking) ─────────────────────────────
+            insertAppointment(formData).catch((err) =>
+                console.warn('Supabase insert skipped (not configured or error):', err)
+            );
+
+            // ── 2. Send Email via EmailJS ──────────────────────────
             if (EMAILJS_SERVICE_ID) {
                 await emailjs.send(
                     EMAILJS_SERVICE_ID,

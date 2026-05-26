@@ -1,16 +1,55 @@
 import { useParams, Link } from 'react-router-dom';
-import { getPostById } from '../lib/blogData';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { getBlogById } from '../lib/supabase';
 import SEO from '../components/SEO';
 
 export default function BlogPost() {
     const { id } = useParams();
-    const post = getPostById(id);
+    const [post, setPost] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    // Scroll to top on mount
+    // Scroll to top and fetch post on mount
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+        let active = true;
+        getBlogById(id)
+            .then((data) => {
+                if (active) {
+                    setPost(data);
+                    setLoading(false);
+                }
+            })
+            .catch((err) => {
+                console.error('Error fetching blog post:', err);
+                if (active) setLoading(false);
+            });
+        return () => { active = false; };
+    }, [id]);
+
+    if (loading) {
+        return (
+            <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', paddingBottom: '60px' }}>
+                <div style={{ backgroundColor: 'white', padding: '16px 20px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)', position: 'sticky', top: 0, zIndex: 100 }}>
+                    <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', color: '#2D3748', fontWeight: 600 }}>
+                            <i className="fas fa-arrow-left"></i> Back to Home
+                        </Link>
+                        <div style={{ fontWeight: 'bold', color: '#6C63FF' }}>
+                            <i className="fas fa-tooth"></i> Thalir Blog
+                        </div>
+                    </div>
+                </div>
+                <article className="container" style={{ maxWidth: '800px', marginTop: '40px' }}>
+                    <div className="skeleton-shimmer" style={{ width: '100%', height: '350px', borderRadius: '16px', marginBottom: '32px', background: '#E5E7EB' }}></div>
+                    <div className="skeleton-line skeleton-shimmer" style={{ height: '20px', width: '20%', marginBottom: '16px', background: '#E5E7EB', borderRadius: '4px' }}></div>
+                    <div className="skeleton-line skeleton-shimmer" style={{ height: '40px', width: '90%', marginBottom: '24px', background: '#E5E7EB', borderRadius: '6px' }}></div>
+                    <div className="skeleton-line skeleton-shimmer" style={{ height: '14px', width: '100%', marginBottom: '8px', background: '#E5E7EB', borderRadius: '4px' }}></div>
+                    <div className="skeleton-line skeleton-shimmer" style={{ height: '14px', width: '95%', marginBottom: '8px', background: '#E5E7EB', borderRadius: '4px' }}></div>
+                    <div className="skeleton-line skeleton-shimmer" style={{ height: '14px', width: '80%', background: '#E5E7EB', borderRadius: '4px' }}></div>
+                </article>
+            </div>
+        );
+    }
 
     if (!post) {
         return (

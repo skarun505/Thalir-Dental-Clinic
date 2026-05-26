@@ -1,14 +1,25 @@
 import { useState, useEffect } from 'react';
 import { img } from '../lib/getImagePath';
+import { getSmileOfMonth } from '../lib/supabase';
 
 export default function SmileOfMonth() {
     const [smileData, setSmileData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const saved = JSON.parse(localStorage.getItem('thalir_smile_of_month'));
-        if (saved && saved.title && saved.imageUrl) {
-            setSmileData(saved);
-        }
+        let active = true;
+        getSmileOfMonth()
+            .then((data) => {
+                if (active) {
+                    setSmileData(data);
+                    setLoading(false);
+                }
+            })
+            .catch((err) => {
+                console.error('Error fetching smile of the month:', err);
+                if (active) setLoading(false);
+            });
+        return () => { active = false; };
     }, []);
 
     const imageUrl = smileData?.imageUrl || img('/images-optimized/IMG_8173.webp');
